@@ -86,7 +86,7 @@ code{background:var(--sunk);border:1px solid var(--line);padding:.08em .4em;bord
 
 /* Body layout */
 .layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:56px;padding-block:48px 80px}
-.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px);align-self:start;font-size:14px}
+.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 76px);align-self:start;font-size:14px;max-height:calc(100vh - 96px);overflow-y:auto;padding-bottom:16px}
 .toc h4{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:22px 0 8px;font-weight:600}
 .toc h4:first-child{margin-top:0}
 .toc a{display:block;color:var(--muted);text-decoration:none;padding:4px 10px;border-left:2px solid var(--line)}
@@ -161,6 +161,62 @@ footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);fo
   .phone{width:270px}
   .brand-text{display:none}
 }
+
+/* Enlarged folder demo */
+.folder-demo{margin-top:22px;display:grid;grid-template-columns:minmax(0,auto) minmax(0,1fr);gap:28px;align-items:center;background:var(--phone);color:var(--phone-ink);border-radius:20px;padding:24px}
+.fd-grid{display:grid;grid-template-columns:repeat(3,64px);grid-auto-rows:74px;gap:8px;background:radial-gradient(120% 90% at 10% 0%,#25304A,#0B0F18);border-radius:16px;padding:12px;max-width:100%}
+.fd-cell{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:10.5px}
+.fd-cell i{width:42px;height:42px;border-radius:13px;display:block}
+.fd-folder{position:relative;display:flex;flex-direction:column;align-items:center;gap:4px;transition:all .35s ease}
+.fd-mini{width:42px;height:42px;border-radius:13px;background:rgba(255,255,255,.16);display:grid;grid-template-columns:1fr 1fr;gap:3px;padding:6px}
+.fd-mini b{border-radius:4px;display:block}
+.fd-name{font-size:10.5px}
+.fd-apps{display:none}
+.fd-folder.big{grid-column:span 2;grid-row:span 2;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);border-radius:18px;padding:8px 6px;justify-content:center}
+.fd-folder.big .fd-mini{display:none}
+.fd-folder.big .fd-apps{display:grid;grid-template-columns:1fr 1fr;gap:6px 4px;width:100%;animation:pop .35s ease-out}
+.fd-folder.big .fd-name{order:-1;font-weight:700;color:var(--gold-fill)}
+.fd-side h4{font-family:var(--display);font-size:22px;margin:0}
+.fd-side p{color:var(--phone-muted);font-size:15px;margin:10px 0 16px}
+
+/* Widget catalogue */
+.wfilter{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.wfilter button{font-family:var(--body);font-size:14px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.wfilter button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.wgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px;margin-top:18px}
+.wcard{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px 18px;min-width:0;display:flex;flex-direction:column;gap:8px}
+.wcard header{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.wcard h4{font-family:var(--display);font-size:18px;margin:0;margin-right:auto}
+.wsize{font-family:var(--mono);font-size:11px;color:var(--muted);border:1px dashed var(--line);border-radius:6px;padding:2px 6px}
+.wlead{margin:0;font-size:15px}
+.wcard dl{margin:0;display:grid;gap:6px}
+.wcard dt{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-top:4px}
+.wcard dd{margin:0;font-size:14.5px;color:var(--muted)}
+
+/* Settings reference */
+.finder{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:20px 0 6px;padding:14px 16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.finder label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.finder input{flex:1;min-width:0;font-family:var(--body);font-size:16px;padding:9px 12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.finder span{font-size:12px;color:var(--muted)}
+.ref{display:grid;gap:0}
+.refsec{max-width:none}
+.refsec summary{align-items:baseline;flex-wrap:wrap}
+.refsec summary span{font-family:var(--body);font-weight:400;font-size:14px;color:var(--muted);margin-right:auto;margin-left:10px}
+.setlist{display:grid;grid-template-columns:minmax(0,15em) minmax(0,1fr);gap:0;margin:14px 0 0;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--surface)}
+.setlist dt,.setlist dd{padding:10px 14px;border-top:1px solid var(--line);margin:0}
+.setlist dt{font-weight:700;font-size:15px}
+.setlist dd{font-size:15px;color:var(--muted)}
+.setlist dt:first-of-type,.setlist dt:first-of-type + dd{border-top:0}
+.setlist .hide{display:none}
+.refnote{color:var(--muted);font-size:15px;max-width:76ch;margin:12px 0 0}
+mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1px}
+@media (max-width: 640px){
+  .folder-demo{grid-template-columns:1fr}
+  .fd-grid{justify-self:center}
+  .setlist{grid-template-columns:1fr}
+  .setlist dd{border-top:0;padding-top:0}
+}
+.part-head{scroll-margin-top:80px}
 </style>
 
 <header class="top">
@@ -173,9 +229,9 @@ footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);fo
       <a href="#crash">Fake crash</a>
       <a href="#vaults">Vaults</a>
       <a href="#profiles">Kid &amp; Guest</a>
-      <a href="#sidebar">Sidebar</a>
-      <a href="#home">Home screen</a>
-      <a href="#gestures">Gestures</a>
+      <a href="#folders">Folders</a>
+      <a href="#widget-list">Widgets</a>
+      <a href="#settings-ref">All settings</a>
       <a href="#faq">FAQ</a>
     </nav>
   </div>
@@ -186,7 +242,7 @@ footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);fo
     <div>
       <span class="eyebrow">User guide · Android launcher</span>
       <h1>A normal home screen that <em>keeps your secrets.</em></h1>
-      <p class="lede">Decoy Launcher looks like any other home screen. Underneath, it can hide apps, lock them, disguise them, make them look broken, and hand your phone to a child or a guest without giving away the rest. This guide walks through every feature and where to find it.</p>
+      <p class="lede">Decoy Launcher looks like any other home screen. Underneath, it can hide apps, lock them, disguise them, make them look broken, and hand your phone to a child or a guest without giving away the rest. This guide walks through every feature, every widget and every setting, and where to find each one.</p>
       <div class="hero-cta">
         <a class="btn primary" href="#start">Start with the basics</a>
         <a class="btn" href="#hide">Jump to app hiding</a>
@@ -233,14 +289,19 @@ footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);fo
     <a href="#sleep">Sleeping mode</a>
     <a href="#profiles">Kid &amp; Guest mode</a>
     <a href="#mindful">Mindful friction</a>
-    <h4>Everyday</h4>
-    <a href="#home">Home screen</a>
+    <h4>Home &amp; folders</h4>
+    <a href="#home">Layouts</a>
+    <a href="#icons">App icons</a>
+    <a href="#folders">Folders</a>
+    <a href="#expand">Enlarged folders</a>
     <a href="#drawer">App drawer</a>
-    <a href="#widgets">Widgets</a>
-    <a href="#glance">At a Glance</a>
-    <a href="#sidebar">Sidebar &amp; mini dock</a>
+    <h4>Widgets</h4>
+    <a href="#widgets">Adding &amp; editing</a>
+    <a href="#widget-list">Every widget</a>
+    <h4>Settings</h4>
+    <a href="#settings-ref">Every setting</a>
     <a href="#gestures">Gestures</a>
-    <a href="#look">Look &amp; feel</a>
+    <a href="#sidebar">Sidebar</a>
     <a href="#backup">Backup</a>
     <h4>More</h4>
     <a href="#premium">Premium</a>
@@ -285,7 +346,7 @@ footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);fo
             <tr><td><b>Animations</b></td><td>App launch, widgets, page scrolling</td></tr>
           </tbody>
         </table></div>
-        <div class="note"><b>Tip:</b> use the search box at the top of Settings. Searching "duress" or "fingerprint" takes you straight to the right row and highlights it. The <b>Tutorials &amp; help</b> button sits next to Premium at the top of Settings.</div>
+        <div class="note"><b>Tip:</b> use the search box at the top of Settings. Searching "duress" or "fingerprint" takes you straight to the right row and highlights it. The <b>Tutorials &amp; help</b> button sits next to Premium at the top of Settings. Every option is also explained in <a href="#settings-ref">Every setting</a> below.</div>
       </section>
 
       <section class="feat" id="permissions">
@@ -491,12 +552,12 @@ footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);fo
       </section>
     </div>
 
-    <!-- EVERYDAY -->
+    <!-- HOME, ICONS, FOLDERS -->
     <div class="part">
       <div class="part-head">
         <span class="eyebrow">Part three</span>
-        <h2>The everyday launcher</h2>
-        <p>Decoy is a complete home screen too. These features are free.</p>
+        <h2>Home screen, icons and folders</h2>
+        <p>How to arrange the home screen, what every icon can do, and how folders open, grow and live on the page.</p>
       </div>
 
       <section class="feat" id="home">
@@ -506,87 +567,657 @@ footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);fo
           <thead><tr><th>Layout</th><th>What you get</th></tr></thead>
           <tbody>
             <tr><td><b>Off</b></td><td>An empty desktop you arrange yourself. Swipe up opens the app drawer.</td></tr>
-            <tr><td><b>Classic</b></td><td>Every app placed automatically across home pages. No drawer; everything lives on the pages.</td></tr>
+            <tr><td><b>Classic</b></td><td>Every app placed automatically across home pages. No drawer; everything lives on the pages. Choose <b>List</b> (one column, vertical scroll), <b>Grid</b> (several columns, vertical scroll) or <b>Pages</b> (fixed pages swiped sideways).</td></tr>
             <tr><td><b>Mixed</b></td><td>The same automatic pages as Classic, but swipe up still opens the drawer.</td></tr>
-            <tr><td><b>Text</b></td><td>App names instead of icons everywhere, arranged as a list, a grid or across pages. Decoy's widgets can turn into plain text too.</td></tr>
+            <tr><td><b>Text</b></td><td>App names instead of icons on the home screen, dock, drawer and folders, arranged as a list, a grid or across pages. Decoy's widgets can turn into plain text too.</td></tr>
           </tbody>
         </table></div>
-        <p>Each layout remembers its own home screen, so switching back brings it back as you left it. Also here: <b>Group home screen by category</b>, grid size, <b>Lock home screen</b> to prevent accidental changes, <b>Infinite scrolling</b> (with 3 or more pages), and page names with per-page wallpaper dim.</p>
+        <p>Each layout remembers its own home screen, so switching back brings it back as you left it. Long-press an empty spot on the home screen for the home menu: <b>Wallpaper and style</b>, <b>Widgets</b>, <b>Home settings</b> and <b>System settings</b>. You choose which of these appear under Home screen › Pop-up menu.</p>
+      </section>
+
+      <section class="feat" id="icons">
+        <div class="feat-head"><h3>App icons</h3></div>
+        <p>Tap an icon to open the app. Long-press it for its menu. What the menu shows depends on where the icon is:</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Menu item</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td><b>Shortcuts</b></td><td>The app's own shortcuts, like "New message" or "Scan &amp; Pay". Drag one onto the home screen to keep it there.</td></tr>
+            <tr><td><b>Notifications</b></td><td>With <i>Notifications in app menu</i> on, the app's notifications appear here. Tap one to open it, swipe it away to dismiss it.</td></tr>
+            <tr><td><b>Open in split screen</b></td><td>Opens the app beside the one you were using.</td></tr>
+            <tr><td><b>Widgets</b></td><td>That app's widgets, ready to place.</td></tr>
+            <tr><td><b>Customise</b></td><td>Change the icon's name, pick a new icon picture from your gallery, or tick <b>Hide from app drawer</b>.</td></tr>
+            <tr><td><b>Resize</b></td><td>Grow the icon into an <b>app tile</b> that also shows the app's shortcuts (see below).</td></tr>
+            <tr><td><b>Select multiple</b></td><td>Tick several icons, then move them together or put them in a folder.</td></tr>
+            <tr><td><b>Add to folder / Remove from folder</b></td><td>In the app drawer: put the app in one of the drawer's folders, or take it out.</td></tr>
+            <tr><td><b>Arrange drawer</b></td><td>In the app drawer: turns on drag and drop so you can move apps between drawer folders.</td></tr>
+            <tr><td><b>App info / Uninstall</b></td><td>Android's page for the app, or remove it.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="cols">
+          <div class="card"><h4>App tiles</h4><p>A resized icon spreads over several cells. One row tall shows the icon then a strip of shortcut buttons; one column wide shows them top to bottom; 2×2 and bigger shows the icon and name on top with labelled shortcuts underneath. Locked and disguised apps show no shortcuts, so nothing gives them away.</p></div>
+          <div class="card"><h4>Moving icons</h4><p>Hold and drag to move. Drop on another icon to make a folder. Drop on the dock to put an app there. Turn on <b>Lock home screen</b> to stop accidental changes.</p></div>
+          <div class="card"><h4>Icon look</h4><p>Size, shape, pack, theming, background and shadow are under Settings › General › Icons. See the <a href="#ref-general">settings reference</a>.</p></div>
+        </div>
+      </section>
+
+      <section class="feat" id="folders">
+        <div class="feat-head"><h3>Folders</h3></div>
+        <p>Drag one app onto another on the home screen to make a folder. Decoy names it; hold the folder and tap the pencil to rename it.</p>
+        <div class="cols">
+          <div class="card"><h4>Inside a folder</h4><p>Tap a folder to open it. Hold an app inside and drag it over another app to reorder: everything between them shifts one place. Drag up or down out of the folder to take an app out. Big folders can split into pages you swipe sideways.</p></div>
+          <div class="card"><h4>The folder menu</h4><p>Hold a folder for: <b>Rename</b> (the pencil), <b>Select</b>, <b>Enlarge</b> or <b>Shrink</b>, <b>Remove</b>, and on an enlarged folder <b>Folder layout</b> and <b>Move or resize</b>.</p></div>
+          <div class="card"><h4>Drawer folders</h4><p>In the app drawer, choose <b>Add to folder</b> or <b>Put in folder</b> after selecting apps. Folder options let you rename it, add apps with +, move it earlier or later, delete it (its apps go back to the list), or <b>Add to home screen</b> as a home-screen folder with the same apps.</p></div>
+        </div>
+      </section>
+
+      <section class="feat" id="expand">
+        <div class="feat-head"><h3>Enlarged (expandable) folders</h3></div>
+        <p>An enlarged folder opens up on the home screen itself. Its apps sit right there and open with one tap, without opening the folder first.</p>
+        <div class="folder-demo">
+          <div class="fd-grid" id="fdGrid" aria-label="Home screen with a folder">
+            <div class="fd-cell"><i style="background:#2E7D5B"></i><span>Phone</span></div>
+            <div class="fd-cell"><i style="background:#2F6FB0"></i><span>Maps</span></div>
+            <div class="fd-folder" id="fdFolder">
+              <div class="fd-mini"><b style="background:#B5476A"></b><b style="background:#C25A2E"></b><b style="background:#357A8A"></b><b style="background:#7A4FB0"></b></div>
+              <div class="fd-apps">
+                <div class="fd-cell"><i style="background:#B5476A"></i><span>Music</span></div>
+                <div class="fd-cell"><i style="background:#C25A2E"></i><span>Mail</span></div>
+                <div class="fd-cell"><i style="background:#357A8A"></i><span>Files</span></div>
+                <div class="fd-cell"><i style="background:#7A4FB0"></i><span>Journal</span></div>
+              </div>
+              <span class="fd-name">Daily</span>
+            </div>
+            <div class="fd-cell"><i style="background:#4A5266"></i><span>Clock</span></div>
+            <div class="fd-cell"><i style="background:#B08A1E"></i><span>Notes</span></div>
+            <div class="fd-cell"><i style="background:#3E4C6B"></i><span>Camera</span></div>
+          </div>
+          <div class="fd-side">
+            <h4>Try it</h4>
+            <p>Hold the folder and choose Enlarge. It grows into the free cells around it and shows its apps inline. Shrink turns it back into a normal icon.</p>
+            <button class="btn primary" type="button" id="fdToggle">Enlarge</button>
+          </div>
+        </div>
+        <ol class="steps">
+          <li><div>Hold a folder and tap <b>Enlarge</b>. It needs free cells nearby; the option is greyed out when there's no room.</div></li>
+          <li><div>Hold the enlarged folder and tap <b>Folder layout</b>. Drag across the grid to draw the size you want, or tap a cell to stretch toward it. Light cells are free.</div></li>
+          <li><div>Under <b>Grow toward</b>, choose which way it expands (or <b>Grow evenly</b>), and set <b>Width</b> and <b>Height</b> in cells.</div></li>
+          <li><div>Under <b>Apps inside</b>, set <b>Columns</b> and <b>Rows per page</b>, or <b>Match the folder size (Auto)</b>.</div></li>
+          <li><div>Tap <b>Apply</b>. <b>Shrink to icon</b> returns it to 1 × 1.</div></li>
+        </ol>
+        <div class="note"><b>Defaults for new ones:</b> Settings › Folders › Enlarged folder sets the starting width, height and apps per row for every folder you enlarge from now on. Each folder can still change its own.</div>
       </section>
 
       <section class="feat" id="drawer">
-        <div class="feat-head"><h3>App drawer, folders and categories</h3></div>
-        <div class="path">Settings › <b>App drawer</b></div>
-        <p>Choose list, grid or pages, the number of columns, and an A to Z scrollbar with a tick as you pass each letter. <b>App categories</b> group apps as Social, Finance, Games and so on, and you can move apps between categories.</p>
-        <p>Long-press an app for its menu: shortcuts, notifications, <b>Customise</b> (label, icon, hide from drawer), <b>Open in split screen</b>, <b>Add to folder</b>, <b>Select multiple</b>, App info and Uninstall. Drag one app onto another to make a folder, then hold the folder to rename it.</p>
+        <div class="feat-head"><h3>App drawer</h3></div>
+        <div class="path">Swipe up on the home screen</div>
+        <p>Every app in one place, with a search bar at the top. The drawer's search bar is the only place to type your secret code or a vault PIN. Drag the A to Z scrollbar to jump to a letter. With categories on, a row of category names at the top jumps between groups like Social, Finance and Games.</p>
       </section>
+    </div>
+
+    <!-- WIDGETS -->
+    <div class="part">
+      <div class="part-head">
+        <span class="eyebrow">Part four</span>
+        <h2>Decoy widgets</h2>
+        <p>Twenty-six widgets built into the launcher. Most come with a full app of their own that opens when you tap the widget.</p>
+      </div>
 
       <section class="feat" id="widgets">
-        <div class="feat-head"><h3>Widgets and the widget page</h3></div>
-        <p>Long-press the home screen and tap <b>Widgets</b>. Alongside every app's widgets, Decoy has its own:</p>
-        <div class="tags">
-          <span class="tag">To-do list</span><span class="tag">Notes</span><span class="tag">Photo slideshow</span><span class="tag">Stopwatch &amp; timer</span><span class="tag">Device info</span><span class="tag">Memory</span><span class="tag">Storage</span><span class="tag">Unlock count</span><span class="tag">Quick toggles</span><span class="tag">Screen time</span><span class="tag">Habit tracker</span><span class="tag">Countdown</span><span class="tag">Focus timer</span><span class="tag">Media player</span><span class="tag">Favourite contacts</span><span class="tag">All batteries</span><span class="tag">Bookmarks</span><span class="tag">Quick Open</span><span class="tag">Savings goal</span><span class="tag">Spending</span><span class="tag">Animated sticker</span><span class="tag">Developer options</span><span class="tag">Bluetooth devices</span>
+        <div class="feat-head"><h3>Adding and editing widgets</h3></div>
+        <ol class="steps">
+          <li><div>Long-press an empty spot on the home screen and tap <b>Widgets</b>. Decoy's widgets come first, grouped as Productivity, Shortcuts &amp; files, Phone &amp; system, Connections, Money, Media, Fun and Profiles. Every other app's widgets follow. Search at the top finds any of them.</div></li>
+          <li><div>Long-press a widget in the list and drop it on the home screen.</div></li>
+          <li><div>To change it, long-press the widget on the home screen and tap the gear. To resize it, long-press and drag its edges.</div></li>
+        </ol>
+        <p>Every Decoy widget's settings have the same four tabs:</p>
+        <div class="cols">
+          <div class="card"><h4>Content</h4><p>What this particular widget shows. Each widget's options are listed below.</p></div>
+          <div class="card"><h4>Look</h4><p><b>Presets</b>: Material, Tonal, Soft, Accent, Midnight, Paper, Sticky, Ocean, Sunset, Forest, Glass, Outline, Neon, Bare. <b>Colours</b>: Material You (Neutral, Primary, Secondary or Tertiary tone, following your theme and wallpaper) or Custom. <b>Background</b>: Solid, Gradient (two colours and an angle), Frosted or None. Opacity, corner radius, inner padding, border width and colour. <b>Reset look</b> undoes it all.</p></div>
+          <div class="card"><h4>Text</h4><p>Show title, show icons, secondary text colour, accent colour (checkboxes, rings, bars, active toggles), font (Default, Sans, Serif, Mono, Handwritten), weight from Light to Black, italic, text size, letter spacing, text shadow for busy wallpapers, and alignment.</p></div>
+          <div class="card"><h4>Size &amp; tap</h4><p>Width and height in cells. <b>When the widget is tapped</b>: its default, open an app you choose, or nothing. And <b>Secret tap</b>.</p></div>
         </div>
-        <p>Photo slideshow, habit tracker, screen time, quick toggles, unlock counter and the Bluetooth widgets are <span class="pro">PRO</span>. Under <span class="mono">Home screen › Feed</span> you can set a <b>Widget page</b>: swipe right on the first home page to open a full page of widgets.</p>
+        <div class="note"><b>Secret tap</b> turns any widget into a hidden door. Choose a pattern (3 quick taps, 5 quick taps, or tap-tap, pause, tap-tap) and what it opens: reveal hidden apps, a vault, the file vault, or Decoy settings, after your PIN or fingerprint. Nothing happens on screen otherwise, and normal use of the widget's buttons never counts.</div>
+        <p><b>Widget page:</b> under Home screen › Feed, pick Decoy's widget page. Swipe right from the first home page to open a full column of widgets. Tap <b>Edit</b> there to add, reorder, resize or remove them. It starts with media, batteries, habits, screen time and contacts.</p>
       </section>
 
-      <section class="feat" id="glance">
-        <div class="feat-head"><h3>At a Glance</h3></div>
-        <div class="path">Settings › <b>At a Glance</b></div>
-        <p>The strip at the top of the home screen with the date, time, weather, next alarm, next calendar event, battery and what's playing. Choose what it shows and its colours and size. Tapping each part opens the matching app; long-press always opens the At a Glance menu.</p>
+      <section class="feat" id="widget-list">
+        <div class="feat-head"><h3>Every widget</h3></div>
+        <div class="wfilter" role="group" aria-label="Filter widgets by group">
+          <button type="button" class="on" data-cat="all">All</button>
+          <button type="button" data-cat="prod">Productivity</button>
+          <button type="button" data-cat="files">Shortcuts &amp; files</button>
+          <button type="button" data-cat="sys">Phone &amp; system</button>
+          <button type="button" data-cat="conn">Connections</button>
+          <button type="button" data-cat="money">Money</button>
+          <button type="button" data-cat="media">Media</button>
+          <button type="button" data-cat="fun">Fun</button>
+        </div>
+        <div class="wgrid" id="wgrid">
+
+          <article class="wcard" data-cat="prod">
+            <header><h4>To-do list</h4><span class="wsize">2×2</span></header>
+            <p class="wlead">Tick tasks off right on the home screen. The + adds one, with an optional High priority flag.</p>
+            <dl>
+              <dt>Settings</dt><dd>Order (as added, due date, priority, newest); new tasks on top; finished tasks last; hide finished tasks; round or square boxes; strike through finished; progress bar; "3/7" count; add button; priority dots; due dates ("Today", "Tmrw", how late); compact rows; lines per task. Buttons to clear finished or untick all.</dd>
+              <dt>Tap opens</dt><dd>The to-do app: lists (Work, Shopping…), due dates (Today, Tomorrow, In 3 days, Next week), priority, steps, notes, search, and tabs for All, Today, Upcoming, No date and Done.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="prod">
+            <header><h4>Notes</h4><span class="wsize">2×2</span></header>
+            <p class="wlead">A sticky note on the home screen. Lines written as <code>[ ] text</code> become checkboxes.</p>
+            <dl>
+              <dt>Settings</dt><dd>Which note to show (a chosen one or the latest edited); lined paper; show last edited; max lines (0 shows all and scrolls).</dd>
+              <dt>Tap opens</dt><dd>The notes app: search, pin, colour, checklist view, share, copy, and a word count.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="prod">
+            <header><h4>Habit tracker</h4><span class="pro">PRO</span><span class="wsize">4×2</span></header>
+            <p class="wlead">Tick today's circles and keep your streaks. Habits can be every day, weekdays, weekends or chosen days, with a daily goal for things you count, like 8 glasses of water.</p>
+            <dl>
+              <dt>Settings</dt><dd>Days shown (this week, or the last 3, 5 or 7 days); day names; dates; streaks; only today's habits; add button; tick past days on the widget.</dd>
+              <dt>Tap opens</dt><dd>The habit app: Today, All habits and Stats, a month calendar per habit, current and best streak, success rate, last 12 weeks, archive.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="prod">
+            <header><h4>Countdown</h4><span class="wsize">2×1</span></header>
+            <p class="wlead">Days until a date that matters, or days since one. Events can be all day or at a time, and repeat every year for birthdays.</p>
+            <dl>
+              <dt>Settings</dt><dd>Which event (a chosen one, or the next coming up); count in days/hours/minutes/seconds, days/hours/minutes, or days only; days or weeks; show the date.</dd>
+              <dt>Tap opens</dt><dd>The countdown app: all your events with icons and colours, and how much of the wait is behind you.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="prod">
+            <header><h4>Pomodoro</h4><span class="wsize">2×2</span></header>
+            <p class="wlead">A focus timer with short and long breaks (25 and 5 minutes to start).</p>
+            <dl>
+              <dt>Settings</dt><dd>Focus, short and long break lengths; focus rounds before a long break; start the next phase by itself; vibrate between phases; round dots; Do Not Disturb (priority only) while focusing.</dd>
+              <dt>Tap opens</dt><dd>The focus app: what you're working on, sessions, minutes focused, day streak and the last 7 and 30 days.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="prod">
+            <header><h4>Stopwatch &amp; timer</h4><span class="wsize">2×1</span></header>
+            <p class="wlead">Start, pause, lap and reset a stopwatch, or run a countdown timer.</p>
+            <dl>
+              <dt>Settings</dt><dd>Mode; countdown length (10, 15, 25 min or any hours/minutes/seconds); vibrate when done; hundredths; always show hours; fixed-width digits; progress ring; laps; icon, text or no buttons.</dd>
+              <dt>Tap opens</dt><dd>The stopwatch and timer app, with +1 min, lap times and fastest, slowest and average laps.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="files">
+            <header><h4>Bookmarks</h4><span class="wsize">full row</span></header>
+            <p class="wlead">Your saved links one tap away, in a strip across the home screen.</p>
+            <dl>
+              <dt>Settings</dt><dd>Layout (icons, list or chips); which links (pinned first, pinned only, recently used, most used, newest, or one folder); most links shown; icon shape; names; show website; + button. <b>Fetch site icons and titles</b> asks each website directly; off keeps everything on the phone.</dd>
+              <dt>Tap opens</dt><dd>The bookmarks app: folders, tags, notes, a browser per link, search, statistics, recently deleted, import from Chrome, Firefox, Edge or Safari, and export.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="files">
+            <header><h4>Quick Open</h4><span class="wsize">full row</span></header>
+            <p class="wlead">Videos, music, PDFs and documents one tap away, with built-in players that remember where you stopped.</p>
+            <dl>
+              <dt>Settings</dt><dd>Layout (icons, cards, list or chips); which files and which types; most shown; names, details and play badges; + button. Privacy: previews on or off, blur previews, hide file names. Opening files with the built-in player, the phone's default app, or ask every time.</dd>
+              <dt>Tap opens</dt><dd>The Quick Open app: groups, pins, sorting, private copies of new files, and missing-file finder.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="sys">
+            <header><h4>Device info</h4><span class="wsize">2×2</span></header>
+            <p class="wlead">Model, Android version, battery, uptime and more.</p>
+            <dl>
+              <dt>Settings</dt><dd>Rows to show: Model, Brand, Android, Security patch, Battery, Battery temp, Voltage, Uptime, RAM, Storage, Processor, Screen (in the order you switch them on); bars; refresh every 1 or 5 minutes.</dd>
+              <dt>Tap opens</dt><dd>Full specs: display, processor, cameras, sensors, connectivity. Copy or share it all.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="sys">
+            <header><h4>Memory (RAM) and Storage</h4><span class="wsize">2×1</span></header>
+            <p class="wlead">Two widgets: how much RAM is in use, and how full storage is.</p>
+            <dl>
+              <dt>Settings</dt><dd>Ring, bar or just numbers; show used or free; percent, size or both; thickness; turn red above a level; warning colour.</dd>
+              <dt>Tap opens</dt><dd>A live RAM graph (last 3 minutes) and what's using your storage.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="sys">
+            <header><h4>All batteries</h4><span class="wsize">4×1</span></header>
+            <p class="wlead">Phone, earbuds, watch and more in one place.</p>
+            <dl>
+              <dt>Settings</dt><dd>This phone first; each earbud and the case (AirPods, Galaxy Buds and most Fast Pair buds, needs nearby-devices access); devices without a level; rings or list; low battery colour.</dd>
+              <dt>Tap opens</dt><dd>The battery app: 24-hour chart, health, temperature and every connected device.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="sys">
+            <header><h4>Screen time</h4><span class="pro">PRO</span><span class="wsize">4×2</span></header>
+            <p class="wlead">Today's use per app with a weekly chart. Needs usage access.</p>
+            <dl>
+              <dt>Settings</dt><dd>Apps listed; weekly chart; opens today; tap an app to open it (still goes through its locks and pauses); daily limit warning. Apps over the limit turn orange, mindful apps get a lotus, and hidden apps are never listed.</dd>
+              <dt>Tap opens</dt><dd>Hour by hour, the week, and per-app daily limits.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="sys">
+            <header><h4>Unlock count</h4><span class="pro">PRO</span><span class="wsize">1×1</span></header>
+            <p class="wlead">How many times you've unlocked today.</p>
+            <dl>
+              <dt>Settings</dt><dd>Last 7 days chart; last unlock time; daily goal and over-goal colour. Allow usage access for an exact count and past days.</dd>
+              <dt>Tap opens</dt><dd>Unlocks by hour, 30 days, averages and your goal.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="sys">
+            <header><h4>Quick toggles</h4><span class="pro">PRO</span><span class="wsize">full row</span></header>
+            <p class="wlead">Wi-Fi, mobile data, Bluetooth, torch, Do not disturb, auto-rotate, auto brightness, location, airplane, battery saver, hotspot and Settings.</p>
+            <dl>
+              <dt>Settings</dt><dd>Which toggles (in the order you switch them on); circles, rounded or squares; labels; toggle size; off colour; icon colour when on. Some toggles open Android's own switch because apps can't flip them directly.</dd>
+              <dt>Tap opens</dt><dd>Controls: every switch, brightness, volume, sound mode and screen timeout.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="sys">
+            <header><h4>Developer options</h4><span class="wsize">1×1</span></header>
+            <p class="wlead">An icon that opens Developer options, or goes straight to one setting: USB or wireless debugging, stay awake, animation speed, show taps, layout bounds and more.</p>
+            <dl>
+              <dt>Settings</dt><dd>What a tap opens; tap does (open the setting, or switch it right here, which needs a one-time command from a computer that the widget lets you copy); quick buttons when made bigger; squircle, circle or square; name under the icon.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="conn">
+            <header><h4>Favourite contacts</h4><span class="wsize">4×1</span></header>
+            <p class="wlead">Call or message your people in one tap.</p>
+            <dl>
+              <dt>Settings</dt><dd>Add from contacts or type a name and number; tapping a contact calls, messages or opens WhatsApp; names; circles or rounded squares.</dd>
+              <dt>Tap opens</dt><dd>Your favourites list, to reorder and edit.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="conn">
+            <header><h4>Bluetooth device</h4><span class="pro">PRO</span><span class="wsize">2×1</span></header>
+            <p class="wlead">One device: connect or disconnect, battery, and switch audio to it.</p>
+            <dl>
+              <dt>Settings</dt><dd>Which device; what tapping the icon and the rest does (connect, switch audio here, or show menu); Material You or custom colours; opacity; frosted; corners; name; battery fill; profile icons; earbud detail; your own image.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="conn">
+            <header><h4>Bluetooth devices</h4><span class="pro">PRO</span><span class="wsize">2×2</span></header>
+            <p class="wlead">All your paired devices and their batteries, or only the ones you pick, with the same options as the single-device widget.</p>
+          </article>
+
+          <article class="wcard" data-cat="money">
+            <header><h4>Savings goal</h4><span class="wsize">full row</span></header>
+            <p class="wlead">Save for something you want, with its photo, progress and a one-tap +.</p>
+            <dl>
+              <dt>Settings</dt><dd>One goal or all goals; goal photo with a veil; wavy progress; "Savings" label; this month; target; percent; remaining and deadline; short numbers (5.4K); celebrate; the + opens add money or adds a set amount.</dd>
+              <dt>Tap opens</dt><dd>Savings: goals with photos and deadlines, how much to save per day to make it, your pace, history and taking money out.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="money">
+            <header><h4>Expenses</h4><span class="wsize">full row</span></header>
+            <p class="wlead">What you've spent this month against your budget, by category.</p>
+            <dl>
+              <dt>Settings</dt><dd>Period (week, month or year); budget bar; left per day; categories; recent entries; category buttons that add straight into a category; income and balance; short numbers; currency.</dd>
+              <dt>Tap opens</dt><dd>Expenses: overview, entries, categories with monthly limits, budget, income, and export as CSV.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="media">
+            <header><h4>Media player</h4><span class="wsize">full row</span></header>
+            <p class="wlead">What's playing, with play, pause and skip. Needs notification access.</p>
+            <dl>
+              <dt>Settings</dt><dd>Material 3 Expressive or Classic; album art behind; colours from the art; wavy progress; times; ±10 second buttons; playing app; album art; art as background; progress bar. Music from hidden apps isn't shown.</dd>
+              <dt>Tap opens</dt><dd>The full player: seek, up next, every app playing, volume and output.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="media">
+            <header><h4>Photo</h4><span class="pro">PRO</span><span class="wsize">2×2</span></header>
+            <p class="wlead">One photo or a slideshow of your own. The widget keeps its own copy; your gallery isn't touched.</p>
+            <dl>
+              <dt>Settings</dt><dd>Add photos; slideshow every 1, 5 or 30 minutes or off; shuffle; fade, instant or slow zoom; tap to open large, open the album, next photo or nothing; fill or fit; filters (Original, Black &amp; white, Sepia, Muted, Vivid, Warm, Cool); darken; caption at top or bottom.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="fun">
+            <header><h4>Animated sticker</h4><span class="wsize">2×2</span></header>
+            <p class="wlead">A bouncing, spinning emoji or your own GIF sticker, sitting on the wallpaper.</p>
+            <dl>
+              <dt>Settings</dt><dd>Emoji (several can take turns or show together) or a GIF, WebP or picture; animation (Bounce, Float, Pulse, Heartbeat, Wiggle, Swing, Jelly, Spin, Flip, Still); slow, normal or fast; pop when tapped; size.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="fun">
+            <header><h4>Math Daily</h4><span class="wsize">2×1</span></header>
+            <p class="wlead">A new sum or puzzle to solve. Tap for the next.</p>
+            <dl>
+              <dt>Settings</dt><dd>Problem types; number range; numbers per question; negative answers; times tables from and to; division with remainders; equations; your own questions; tap for a new one or tap to reveal the answer; change automatically (10 seconds to 15 minutes); never repeat twice in a row; Material or Liquid glass look.</dd>
+            </dl>
+          </article>
+
+          <article class="wcard" data-cat="fun">
+            <header><h4>Fun Facts</h4><span class="wsize">4×1</span></header>
+            <p class="wlead">A short fact to read. Tap for another. Pick subjects, add facts of your own, and set how often it changes, with the same look options as Math Daily.</p>
+          </article>
+
+        </div>
+        <p>Kid, Guest and custom mode shortcuts are also listed with the widgets, under Profiles <span class="pro">PRO</span>.</p>
+      </section>
+    </div>
+
+    <!-- SETTINGS REFERENCE -->
+    <div class="part">
+      <div class="part-head" id="settings-ref">
+        <span class="eyebrow">Part five</span>
+        <h2>Every setting</h2>
+        <p>Each settings section, in the order it appears in the app. Type below to find a setting by name.</p>
+      </div>
+
+      <div class="finder">
+        <label for="setFind" class="mono">Find a setting</label>
+        <input id="setFind" type="search" placeholder="e.g. blur, dock, haptic, swipe" autocomplete="off">
+        <span id="setCount" class="mono" aria-live="polite"></span>
+      </div>
+
+      <div class="ref" id="ref">
+        <details class="refsec" id="ref-general">
+          <summary>General <span>Colours, icons, notification dots</span></summary>
+          <dl class="setlist">
+            <dt>Home screen rotation</dt><dd>Let the home screen turn when the phone is sideways.</dd>
+            <dt>Landscape</dt><dd>Opens the Landscape page (below).</dd>
+            <dt>Haptics</dt><dd>Opens the Haptics page (below).</dd>
+            <dt>Material You Icons</dt><dd>Force every icon to use the accent colour.</dd>
+            <dt>Force Material You</dt><dd>Give themed icons to apps that don't supply one.</dd>
+            <dt>Icon style</dt><dd>System icons or a custom icon pack you've installed. Choose where themed icons come from and whether they're tinted with the accent.</dd>
+            <dt>Separate icon sizes</dt><dd>Different sizes for the home screen, dock, app drawer and folders. Off uses one Icon size everywhere.</dd>
+            <dt>Transparent themed icons</dt><dd>Themed icons without their solid plate.</dd>
+            <dt>Icon shape</dt><dd>System, Circle, Diamond, Egg, Hexagon, One UI, Rounded square, Sharp square, Square, Squircle, Teardrop, Four-sided cookie, Seven-sided cookie or Arch.</dd>
+            <dt>Auto-adaptive icons</dt><dd>Fill old-style icons out to a full square so the shape applies to them too.</dd>
+            <dt>Show shadow behind icons</dt><dd>A soft shadow under each icon.</dd>
+            <dt>Theme</dt><dd>Follow system, Light or Dark.</dd>
+            <dt>Accent colour</dt><dd>Opens the Accent colour page (below).</dd>
+            <dt>Icon background</dt><dd>Default, Accent, Custom or Liquid glass, for all icons or themed ones only. Glass can be a see-through tile, blur the wallpaper (Android 12+) and take a tint.</dd>
+            <dt>Notification dots</dt><dd>Dots on apps with notifications. Needs notification access. Pick the dot colour and whether to show a counter.</dd>
+            <dt>Notifications in app menu</dt><dd>Long-press an app to see, open or swipe away its notifications.</dd>
+            <dt>Backup &amp; restore</dt><dd>Save settings (and optionally the home screen layout) to a file, or restore from one. PINs, codes and vaults are never included.</dd>
+          </dl>
+        </details>
+
+        <details class="refsec">
+          <summary>General › Accent colour</summary>
+          <dl class="setlist">
+            <dt>Wallpaper colours</dt><dd>Pick a palette read from your wallpaper. Each swatch shows primary on top, secondary bottom left, tertiary bottom right.</dd>
+            <dt>Other colours</dt><dd>Your phone's own colour, Monochrome, or suggested palettes.</dd>
+            <dt>Your own colours</dt><dd>Set primary (buttons, switches, links), secondary (tabs, chips) and tertiary (badges, highlights) yourself, or let them follow the primary automatically.</dd>
+            <dt>Inner icon size</dt><dd>How big the picture is inside an icon's background plate.</dd>
+          </dl>
+        </details>
+
+        <details class="refsec">
+          <summary>General › Haptics</summary>
+          <dl class="setlist">
+            <dt>Haptic feedback</dt><dd>Turn vibration off everywhere in the launcher.</dd>
+            <dt>Vibration type</dt><dd>Phone's default, Crisp, Soft, Light tick, Thud, Double tap or Buzz. Try it plays light, normal and firm samples.</dd>
+            <dt>Strength</dt><dd>How strong the vibrations are.</dd>
+            <dt>Home gestures</dt><dd>Double tap, swipes, two-finger gestures, pinch, shake and edge slides.</dd>
+            <dt>Page turns</dt><dd>Swiping between pages. Choose when it ticks: when you let go, as the page passes halfway, or when the page has stopped.</dd>
+            <dt>Long-press, pick up and drop</dt><dd>Holding icons and widgets, the home menu, and dropping.</dd>
+            <dt>Search bar taps</dt><dd>The search bar and its buttons.</dd>
+            <dt>Sliders</dt><dd>A tick per step on settings sliders.</dd>
+            <dt>Settings switches</dt><dd>Turning a switch on or off.</dd>
+            <dt>PIN and secrets</dt><dd>A wrong PIN, and the right draw-to-reveal shape.</dd>
+            <dt>Everything else</dt><dd>Folders, the app list, dialogs and the rest.</dd>
+          </dl>
+        </details>
+
+        <details class="refsec">
+          <summary>General › Landscape</summary>
+          <dl class="setlist">
+            <dt>Home screen rotation</dt><dd>The home screen turns with the phone. Landscape keeps its own grid and layout; portrait isn't touched.</dd>
+            <dt>Dock position</dt><dd>Right edge, Left edge, or Bottom like portrait.</dd>
+            <dt>Search bar</dt><dd>Show it at the bottom when sideways, or hide it for more grid height.</dd>
+            <dt>At a Glance when sideways</dt><dd>Show as usual, Smaller, or Hide.</dd>
+            <dt>Columns when sideways</dt><dd>App drawer columns in landscape, or automatic.</dd>
+            <dt>Landscape grid</dt><dd>Columns and rows for the sideways home screen.</dd>
+            <dt>Start landscape over</dt><dd>Copy the portrait home screen again, fitted to the landscape grid.</dd>
+          </dl>
+        </details>
+
+        <details class="refsec" id="ref-home">
+          <summary>Home screen <span>Feed &amp; widget page, grid, icons</span></summary>
+          <dl class="setlist">
+            <dt>Add app icons to home screen</dt><dd>Put newly installed apps on the home screen.</dd>
+            <dt>Infinite scrolling</dt><dd>Swipe past the last page to get back to the first. Needs 3 or more pages.</dd>
+            <dt>Pages</dt><dd>A name and a wallpaper dim for each page.</dd>
+            <dt>Show page name on swipe</dt><dd>A named page flashes its name as you swipe onto it.</dd>
+            <dt>Clear home screen</dt><dd>Remove every app, folder and widget from the pages. Apps stay installed.</dd>
+            <dt>Feed</dt><dd>What swiping right from the first page opens: Decoy's widget page, another feed app's panel, or nothing.</dd>
+            <dt>At a Glance</dt><dd>Date, weather and more at the top. Opens its own page.</dd>
+            <dt>Scroll wallpaper</dt><dd>The wallpaper moves as you change pages.</dd>
+            <dt>Top shadow</dt><dd>A gradient under the status bar.</dd>
+            <dt>Transparent background</dt><dd>Show your wallpaper behind apps and widgets. Off gives a plain background.</dd>
+            <dt>Layout</dt><dd>Off, Classic, Mixed or Text (see <a href="#home">layouts</a>), with List, Grid or Pages, scrollbar, haptic and strength.</dd>
+            <dt>Widgets as text</dt><dd>In Text layout, Decoy's widgets become a few lines of text.</dd>
+            <dt>Text only style</dt><dd>Alignment, font, size, capitals, dividers and colours for the names.</dd>
+            <dt>Group home screen by category</dt><dd>A folder per category on the home pages. Choose categories opens App categories.</dd>
+            <dt>Home screen grid</dt><dd>Columns × rows. Classic and Mixed refill the new size; each size remembers its own layout. Fill empty spaces closes gaps.</dd>
+            <dt>Lock home screen</dt><dd>Prevent changes to the layout.</dd>
+            <dt>Show dot pagination</dt><dd>Dots instead of lines for the page indicator.</dd>
+            <dt>Show search bar</dt><dd>A search bar below the dock that opens the app drawer.</dd>
+            <dt>Use new pop-up style</dt><dd>Material You's bouncy pop-up menus.</dd>
+            <dt>Edit pop-up menu items</dt><dd>Show or hide Wallpaper and style, Widgets, Home settings and System settings in the home menu.</dd>
+            <dt>Show status bar / Dark status bar</dt><dd>Show the status bar on the home screen, and use dark icons in it.</dd>
+            <dt>Icon size, Show labels, Label size</dt><dd>Icons on the home screen.</dd>
+            <dt>Widget rounded corners</dt><dd>Round every widget's corners, with a radius.</dd>
+            <dt>Allow overlap</dt><dd>Drop a widget exactly where you let go, even over other items.</dd>
+            <dt>Remove size constraints</dt><dd>Ignore widgets' minimum and maximum sizes.</dd>
+            <dt>Enforce widget resizing</dt><dd>Resize widgets that are normally fixed.</dd>
+          </dl>
+        </details>
+
+        <details class="refsec">
+          <summary>App drawer <span>Hidden apps, column count, icons</span></summary>
+          <dl class="setlist">
+            <dt>Layout</dt><dd>Default (one continuous scroll) or Classic (fixed pages swiped sideways).</dd>
+            <dt>Columns</dt><dd>How many apps per row.</dd>
+            <dt>Space below status bar</dt><dd>Move the drawer's content up or down.</dd>
+            <dt>Separate apps by letter</dt><dd>A–Z section headers in the scrolling list.</dd>
+            <dt>Group app drawer by category</dt><dd>Group under Social, Finance, Games and so on. Choose categories to move apps between them.</dd>
+            <dt>Hidden &amp; Locked Apps</dt><dd>Opens the per-app security rules.</dd>
+            <dt>Separated search bar background</dt><dd>Give the drawer's search bar its own background.</dd>
+            <dt>Icon size, Show labels, Label size, Use multiple lines</dt><dd>Icons and names in the drawer.</dd>
+            <dt>Remember position</dt><dd>Reopen the drawer where you left it.</dd>
+            <dt>Show scrollbar / Letters on scrollbar</dt><dd>The A–Z rail always, a thin bar, or a thin bar that turns into letters while you drag.</dd>
+          </dl>
+        </details>
+
+        <details class="refsec">
+          <summary>App drawer › App categories</summary>
+          <dl class="setlist">
+            <dt>App drawer</dt><dd>Grouped by category or not.</dd>
+            <dt>Home screen</dt><dd>A folder per category on your home pages.</dd>
+            <dt>Show as</dt><dd>In the drawer: folders, or every app under a heading.</dd>
+            <dt>Categories</dt><dd>Switch categories on or off; switched-off ones go into Other.</dd>
+            <dt>Move apps</dt><dd>Tap an app to put it in another category.</dd>
+          </dl>
+        </details>
+
+        <details class="refsec">
+          <summary>Decoy Settings <span>Hiding, locking, disguises, vaults</span></summary>
+          <dl class="setlist">
+            <dt>Settings lock &amp; secrets</dt><dd>See <a href="#secrets">Settings lock</a> and <a href="#draw">Draw to reveal</a>.</dd>
+            <dt>App hiding</dt><dd>See <a href="#hide">Hide apps</a>, <a href="#vaults">Vaults</a> and <a href="#disguise">Disguises</a>.</dd>
+            <dt>App locking</dt><dd>See <a href="#lock">Lock apps</a>.</dd>
+            <dt>File vault</dt><dd>See <a href="#filevault">File vault</a>.</dd>
+            <dt>Fake crash</dt><dd>See <a href="#crash">Fake crash</a>.</dd>
+            <dt>Sleeping mode</dt><dd>See <a href="#sleep">Sleeping mode</a>.</dd>
+            <dt>Mindful friction</dt><dd>See <a href="#mindful">Mindful friction</a>.</dd>
+            <dt>Profiles</dt><dd>See <a href="#profiles">Kid and Guest mode</a>.</dd>
+            <dt>Sidebar</dt><dd>See the Sidebar entry below.</dd>
+            <dt>Accessibility permission</dt><dd>See what it's used for, agree, or withdraw consent.</dd>
+            <dt>Intruder gallery</dt><dd>See <a href="#intruders">Intruder gallery</a>.</dd>
+          </dl>
+        </details>
+
+        <details class="refsec" id="ref-sidebar">
+          <summary>Decoy Settings › Sidebar <span>Edge panel, mini dock, bubbles</span></summary>
+          <dl class="setlist">
+            <dt>Show over other apps</dt><dd>Only on the home screen, or in every app too (needs the accessibility service). Never on the lock screen or in Kid and Guest mode.</dd>
+            <dt>Hide in these apps</dt><dd>Apps where the handle doesn't appear.</dd>
+            <dt>Panels</dt><dd>Apps, Toggles, Tools, Launcher, Private, Music, Settings, People, Links, Clipboard and Note. Switch on or off, reorder, lock behind your PIN, rename, or choose what each holds. Add your own panel, or a ready-made group (Office, Design, Printing, Communication, Tools).</dd>
+            <dt>Edge</dt><dd>Right, left or both edges.</dd>
+            <dt>Handle style and colour</dt><dd>Edge line, tab with arrow or three dots; white, accent, glass or a custom colour; opacity.</dd>
+            <dt>Position, length, thickness, touch area</dt><dd>Where the handle sits and how big it is.</dd>
+            <dt>Invisible handle</dt><dd>Nothing is drawn; the edge still works.</dd>
+            <dt>Lock handle position</dt><dd>Long-press won't move it.</dd>
+            <dt>Vibrate</dt><dd>A buzz when it opens or a tile is tapped.</dd>
+            <dt>Open with</dt><dd>Swipe in or tap, swipe in only, or tap only.</dd>
+            <dt>Long-press / swipe up / swipe down on the handle</dt><dd>Extra actions: notification panel, quick settings, app drawer, search, widget page, recents, last app, mini dock, screenshot, torch, lock screen, assistant, draw to reveal, file vault, settings.</dd>
+            <dt>Mini dock</dt><dd>A floating row of apps over other apps: apps, direction, icon size, Last app and Sidebar buttons, put it back.</dd>
+            <dt>Floating app bubbles</dt><dd>Apps as bubbles over other apps: size, hide for now, hide while typing, hide over full-screen apps.</dd>
+            <dt>Dock and bubbles open apps</dt><dd>Full screen, beside the app you're in, or in a pop-up window.</dd>
+            <dt>Clipboard snippets</dt><dd>Text you paste often. {date} and {time} fill in when copied.</dd>
+            <dt>Keyboard &amp; mouse</dt><dd>Arrows and Enter to move and open, Ctrl+1–9 for panels, Ctrl+F to search, Esc to close, right-click for long-press.</dd>
+            <dt>Panel look</dt><dd>Tabs or one scroll; tab style and position; width, height, position, gap, roundness; background, opacity, outline, dim behind; animation (springy slide, slide, fade, grow, none); clock and battery header; search box.</dd>
+            <dt>Icons</dt><dd>Columns, size, names and shape.</dd>
+            <dt>Behaviour</dt><dd>Close after opening something; reopen on the last panel; close by itself after 5 seconds to a minute.</dd>
+            <dt>Panel content</dt><dd>Recent apps, app pairs, volume and brightness sliders, what tapping a contact does.</dd>
+            <dt>Keep clipboard history</dt><dd>Saves what you copied (passwords marked private are skipped), how many items, and clear.</dd>
+            <dt>People and Links</dt><dd>Contacts and links shown on their panels.</dd>
+            <dt>Reset sidebar</dt><dd>Every sidebar setting back to the start, including contacts, links, clipboard and note.</dd>
+          </dl>
+        </details>
+
+        <details class="refsec">
+          <summary>At a Glance <span>What to show</span></summary>
+          <dl class="setlist">
+            <dt>Show on home screen</dt><dd>The date, time and status line above your apps.</dd>
+            <dt>At a Glance provider</dt><dd>Decoy's own strip, or host any installed widget there (Google's At a Glance, a weather or calendar widget).</dd>
+            <dt>Style</dt><dd>Background colour, alpha and size.</dd>
+            <dt>Calendar</dt><dd>Which calendar system, automatic from your language and region.</dd>
+            <dt>Row order</dt><dd>Move rows up or down.</dd>
+            <dt>Tap to open</dt><dd>Date opens your calendar, time the clock, battery the battery settings, weather a weather app, events the event, Now playing the music app. Long-press opens the At a Glance menu.</dd>
+            <dt>What to show</dt><dd>Weather, next alarm, next calendar event (and how many), battery status, Now Playing.</dd>
+            <dt>Date &amp; time</dt><dd>Date format and time format (follow system, 12 or 24 hour).</dd>
+            <dt>Weather</dt><dd>From Open-Meteo, no account. Fahrenheit or Celsius. Use the device's last known location (rounded to about 1 km) or search for a city. Refresh now.</dd>
+          </dl>
+        </details>
+
+        <details class="refsec">
+          <summary>Dock <span>Background, icons, search bar</span></summary>
+          <dl class="setlist">
+            <dt>Show dock</dt><dd>The row of apps at the bottom.</dd>
+            <dt>Show background</dt><dd>A background behind the dock, with colour and alpha.</dd>
+            <dt>Dock apps</dt><dd>Chosen automatically (phone, messages, browser, camera) until you drag an app onto the dock.</dd>
+            <dt>Search bar settings</dt><dd>Opens the Search bar page.</dd>
+            <dt>Spacing</dt><dd>Page dots to icons, and icons to search bar. Reset spacing restores the defaults.</dd>
+            <dt>Icon size, Show labels</dt><dd>Dock icons.</dd>
+          </dl>
+        </details>
+
+        <details class="refsec">
+          <summary>Search bar <span>Web suggestions, global search</span></summary>
+          <dl class="setlist">
+            <dt>Show search bar on dock</dt><dd>A search bar below the dock icons.</dd>
+            <dt>App drawer search bar</dt><dd>The drawer's search bar, also the only place to type your secret code.</dd>
+            <dt>Search bar opens</dt><dd>App drawer search, the built-in search screen (apps, Android settings, calculator, web), the Google app, Google search, or any app.</dd>
+            <dt>Vibrate on tap</dt><dd>A tick when you tap the bar or its buttons.</dd>
+            <dt>Search engine</dt><dd>App default, Google, DuckDuckGo, Bing, Brave Search, Startpage, Ecosia, Qwant, Mojeek, SearXNG, Yahoo, Yandex, Baidu or Wikipedia.</dd>
+            <dt>Automatically show keyboard</dt><dd>Focus the search field whenever the drawer opens.</dd>
+            <dt>Buttons</dt><dd>Buttons at the end of the bar: Decoy settings, voice search, flashlight, notifications, quick settings, screenshot, sidebar, file vault, draw to reveal, Kid or Guest mode, volume, music controls, any app or quick toggle, and more.</dd>
+            <dt>Apply accent colour</dt><dd>Tint the icons in the bar.</dd>
+            <dt>Corner radius, background opacity, outline</dt><dd>The bar's shape and edge, with an outline colour.</dd>
+            <dt>Colours</dt><dd>Background, icons and text.</dd>
+            <dt>Placeholder text</dt><dd>Google, Search apps and web, Find anything, What's up?, nothing, or your own.</dd>
+            <dt>Show in search results</dt><dd>Apps &amp; shortcuts, web suggestions, Android settings, search history, calculator. Clear search history.</dd>
+          </dl>
+        </details>
+
+        <details class="refsec">
+          <summary>Folders <span>Background, grid size, labels</span></summary>
+          <dl class="setlist">
+            <dt>Glass material</dt><dd>Glass folder icons (also on when app icons use glass), with tint and opacity.</dd>
+            <dt>Icon background colour</dt><dd>Same as app icons, or its own.</dd>
+            <dt>Folder background</dt><dd>The opened folder: frosted white in light mode, grey in dark, or your colour. Blur wallpaper behind (Android 12+), blur strength, tint strength, corner radius.</dd>
+            <dt>Split into pages</dt><dd>Swipe sideways inside big folders instead of scrolling, with a page indicator.</dd>
+            <dt>Opened folder</dt><dd>Columns and rows per page.</dd>
+            <dt>Enlarged folder</dt><dd>Default width, height and apps per row for folders you enlarge.</dd>
+            <dt>Icon size, Show labels, Label size</dt><dd>Icons inside folders.</dd>
+          </dl>
+        </details>
+
+        <details class="refsec" id="ref-gestures">
+          <summary>Gestures <span>Taps and swipes</span></summary>
+          <dl class="setlist">
+            <dt>Double tap, Double tap at the top</dt><dd>Anywhere, or the strip just under the status bar.</dd>
+            <dt>Swipe up, Swipe down</dt><dd>On the home screen.</dd>
+            <dt>Home button, Back button</dt><dd>Only fire when nothing else is open.</dd>
+            <dt>Swipe up / down on dock</dt><dd>Gestures that start on the dock.</dd>
+            <dt>Swipe sensitivity</dt><dd>Long swipe, Medium-long, Medium, Short or A flick.</dd>
+            <dt>App pairs</dt><dd>Split-screen pairs. Choose the first app (top or left) and the second.</dd>
+            <dt>Two fingers</dt><dd>Two-finger swipe down, swipe up and tap; pinch in and pinch out.</dd>
+            <dt>Edge slides</dt><dd>Left and right edges: off, brightness or volume.</dd>
+            <dt>Shake phone</dt><dd>An action when you shake the phone on the home screen.</dd>
+          </dl>
+          <p class="refnote">Actions you can assign: do nothing; sleep; recents; notification panel; quick settings; split-screen pair; app drawer (with or without search); search screen; your search engine's website; any app; assistant; Kid or Guest mode; draw to reveal; file vault; Decoy settings; widget page; sidebar; torch; screenshot; volume up, down, slider or mute; ring → vibrate → silent; brightness up, down or panel; play/pause, next, previous; power menu; last app; camera; phone; calendar; clock; phone settings; change wallpaper; a quick toggle; open a hidden app.</p>
+        </details>
+
+        <details class="refsec">
+          <summary>Animations <span>App launch, widgets, layout scrolling</span></summary>
+          <dl class="setlist">
+            <dt>Follow "Remove animations"</dt><dd>Turn Decoy's animations off when Android's are off.</dd>
+            <dt>Decoy-drawn app animations</dt><dd>Decoy plays the opening animation itself so it looks the same on every phone.</dd>
+            <dt>Opening animation</dt><dd>From icon, Material, Reveal, Shared axis, Depth, Fade through, System, Scale, Slide (up, down, left, right), Fade, Zoom In, Spin or Bounce. With a live preview, motion curve, duration, surface colour, corner roundness, dim, shadow, app icon (splash, fade out, hidden), icon size, app name, loading bar for slow apps and a haptic tick.</dd>
+            <dt>Back to Home</dt><dd>Zoom, Rise or None, with return duration and distance.</dd>
+            <dt>Placement animation</dt><dd>How a new widget appears: Spring, Drop, Slide In, Pulse, Flip and more, with a duration.</dd>
+            <dt>Resize transition</dt><dd>Fluid, Snap, Crossfade, Morph or Elastic.</dd>
+            <dt>App drawer open &amp; close</dt><dd>Slide Up, Rise, Grow, Fade, Zoom or None. Custom drawer speed sets a duration.</dd>
+            <dt>Page transition</dt><dd>Default, Cube, Stack, Accordion, Carousel, Cylinder or Hinge.</dd>
+            <dt>Page swipe feel</dt><dd>Gentle, Snappy (shorter drag) or Bouncy (overshoots a little).</dd>
+            <dt>Alphabet scroll</dt><dd>Wave, Bubble, Big letter or Minimal; size; glide to the letter; big letter too.</dd>
+            <dt>Reset all animations</dt><dd>Everything on the page back to how it came.</dd>
+          </dl>
+        </details>
+
+        <details class="refsec">
+          <summary>Premium</summary>
+          <dl class="setlist">
+            <dt>Unlock Premium</dt><dd>One payment through Google Play. No subscription.</dd>
+            <dt>Restore purchase</dt><dd>Turn Premium back on for the same Google account.</dd>
+            <dt>Have a promo code?</dt><dd>Redeem it in Google Play; Premium switches on by itself.</dd>
+          </dl>
+        </details>
+      </div>
+      <p class="refnote" id="setNone" hidden>No setting matches that. Try a shorter word.</p>
+    </div>
+
+    <!-- GESTURES SUMMARY -->
+    <div class="part">
+      <section class="feat" id="gestures">
+        <div class="feat-head"><h3>Gestures at a glance</h3></div>
+        <p>The gestures you can set, and the kinds of action they can run. The full list is in the <a href="#ref-gestures">settings reference</a>.</p>
+        <div class="tags">
+          <span class="tag">Double tap</span><span class="tag">Double tap at the top</span><span class="tag">Swipe up</span><span class="tag">Swipe down</span><span class="tag">Swipe up on dock</span><span class="tag">Swipe down on dock</span><span class="tag">Two-finger swipe up</span><span class="tag">Two-finger swipe down</span><span class="tag">Two-finger tap</span><span class="tag">Pinch in</span><span class="tag">Pinch out</span><span class="tag">Shake phone</span><span class="tag">Home button</span><span class="tag">Back button</span><span class="tag">Edge slides</span>
+        </div>
+        <p>Sleep, Recents, Last app, Power menu, screenshots and split-screen pairs need the accessibility service once. Brightness needs "Modify system settings" once.</p>
       </section>
 
       <section class="feat" id="sidebar">
         <div class="feat-head"><h3>Sidebar and mini dock</h3></div>
         <div class="path">Decoy Settings › <b>Sidebar</b></div>
-        <p>A panel that slides in from the edge of the screen with your apps, toggles, tools, private shortcuts, music, people, links, clipboard history and a note.</p>
-        <ol class="steps">
-          <li><div>Turn the sidebar on, then swipe in from the handle on the screen edge.</div></li>
-          <li><div>Choose <b>Only on the home screen</b> or <b>Show over other apps</b> (needs the accessibility service). It never shows on the lock screen or in Kid and Guest mode.</div></li>
-          <li><div>Under <b>Panels</b>, switch panels on or off, reorder them, lock them behind your PIN, or add your own. <b>Add a ready-made group</b> fills one with your Office, Design, Printing, Communication or Tools apps.</div></li>
-        </ol>
-        <div class="cols">
-          <div class="card"><h4>Invisible handle</h4><p>Nothing is drawn but the edge still works. Nobody else will know it's there.</p></div>
-          <div class="card"><h4>Mini dock</h4><p>A small floating row of apps over other apps. Drag the grip to move it, the corner square to resize, double-tap the grip to turn it sideways.</p></div>
-          <div class="card"><h4>Floating bubbles</h4><p>Apps as bubbles that float over whatever you're doing, opened beside your current app or in a pop-up window.</p></div>
-        </div>
-      </section>
-
-      <section class="feat" id="gestures">
-        <div class="feat-head"><h3>Gestures</h3></div>
-        <div class="path">Settings › <b>Gestures</b></div>
-        <p>Assign an action to any of these gestures on the home screen:</p>
-        <div class="tags">
-          <span class="tag">Double tap</span><span class="tag">Double tap at the top</span><span class="tag">Swipe up</span><span class="tag">Swipe down</span><span class="tag">Swipe up on dock</span><span class="tag">Swipe down on dock</span><span class="tag">Two-finger swipe up</span><span class="tag">Two-finger swipe down</span><span class="tag">Two-finger tap</span><span class="tag">Pinch in</span><span class="tag">Pinch out</span><span class="tag">Shake phone</span><span class="tag">Home button</span><span class="tag">Back button</span>
-        </div>
-        <div class="tbl"><table>
-          <thead><tr><th>Kind of action</th><th>Options</th></tr></thead>
-          <tbody>
-            <tr><td><b>Privacy</b></td><td>Draw to reveal hidden apps, Open file vault, Open Decoy settings, Enter Kid mode, Enter Guest mode, Open a hidden app</td></tr>
-            <tr><td><b>Launcher</b></td><td>Open app drawer, drawer with search, search screen, widget page, sidebar, an app, a split-screen pair</td></tr>
-            <tr><td><b>System</b></td><td>Sleep, Recents, notification panel, quick settings, screenshot, assistant, torch</td></tr>
-            <tr><td><b>Sound and screen</b></td><td>Volume up or down, volume slider, mute media, ring → vibrate → silent, brightness up or down</td></tr>
-          </tbody>
-        </table></div>
-        <p><b>Edge slides:</b> put a finger on the very left or right edge and slide up or down to change brightness or volume, like in a video player. <b>App pairs</b> let one gesture open two apps side by side.</p>
-      </section>
-
-      <section class="feat" id="look">
-        <div class="feat-head"><h3>Look and feel</h3></div>
-        <div class="cols">
-          <div class="card"><h4>Icons</h4><p>Icon packs, icon shapes, themed (Material You) icons, separate sizes for home, dock, drawer and folders, and a Liquid glass background.</p></div>
-          <div class="card"><h4>Colours</h4><p>Light or dark theme, an accent colour from presets or your wallpaper.</p></div>
-          <div class="card"><h4>Notification dots</h4><p>Dots or counters on icons. Long-press an app to see, open or dismiss its notifications.</p></div>
-          <div class="card"><h4>Haptics and animations</h4><p>Vibration strength and style, app launch and widget animations, and how page swipes feel.</p></div>
-          <div class="card"><h4>Landscape</h4><p>Turn on home screen rotation, then set the dock side, grid and layout for sideways use.</p></div>
-          <div class="card"><h4>Search bar</h4><p>Search engine, colours, placeholder text, and buttons for voice search, toggles or apps on the bar.</p></div>
-        </div>
+        <p>A panel that slides in from the edge of the screen with your apps, toggles, tools, private shortcuts, music, people, links, clipboard history and a note. Turn it on, then swipe in from the handle. Every option is in the <a href="#ref-sidebar">settings reference</a>.</p>
       </section>
 
       <section class="feat" id="backup">
         <div class="feat-head"><h3>Backup and restore</h3></div>
         <div class="path">Settings › General › <b>Backup &amp; restore</b></div>
-        <p>Tap <b>Save backup to a file</b> to save your settings, and optionally your home screen layout, as one file. Turn the layout off if you're moving to a phone with a different screen size. <b>Restore from a file</b> replaces your current settings, and a file that isn't a backup is refused.</p>
+        <p>Tap <b>Save backup to a file</b> to save your settings, and optionally your home screen layout. Turn the layout off if you're moving to a phone with a different screen size. <b>Restore from a file</b> replaces your current settings, and a file that isn't a backup is refused.</p>
         <div class="note"><b>Kept off backups on purpose:</b> PINs, the secret unlock code and vaults are never written to the file, and they're left untouched when you restore.</div>
       </section>
     </div>
@@ -594,7 +1225,7 @@ footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);fo
     <!-- MORE -->
     <div class="part">
       <div class="part-head">
-        <span class="eyebrow">Part four</span>
+        <span class="eyebrow">Part six</span>
         <h2>Premium and questions</h2>
       </div>
 
@@ -716,6 +1347,40 @@ footer{border-top:1px solid var(--line);padding-block:28px;color:var(--muted);fo
     var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){links.forEach(function(l){l.classList.toggle("on",l.getAttribute("href")==="#"+en.target.id)})}})},{rootMargin:"-30% 0px -60% 0px"});
     document.querySelectorAll("section.feat").forEach(function(s){io.observe(s)});
   }
+
+  // Enlarged folder demo
+  var fdBtn=document.getElementById("fdToggle"),fdFolder=document.getElementById("fdFolder");
+  if(fdBtn&&fdFolder){fdBtn.addEventListener("click",function(){var big=fdFolder.classList.toggle("big");fdBtn.textContent=big?"Shrink":"Enlarge"})}
+
+  // Widget filter
+  var wbtns=[].slice.call(document.querySelectorAll(".wfilter button"));
+  wbtns.forEach(function(b){b.addEventListener("click",function(){
+    wbtns.forEach(function(x){x.classList.toggle("on",x===b)});
+    var c=b.dataset.cat;
+    document.querySelectorAll(".wcard").forEach(function(w){w.hidden=!(c==="all"||w.dataset.cat===c)});
+  })});
+
+  // Settings finder
+  var find=document.getElementById("setFind"),cnt=document.getElementById("setCount"),none=document.getElementById("setNone");
+  var secs=[].slice.call(document.querySelectorAll(".refsec"));
+  secs.forEach(function(s){s.querySelectorAll(".setlist dt").forEach(function(dt){dt.dataset.t=dt.textContent})});
+  function runFind(){
+    var q=find.value.trim().toLowerCase(),total=0;
+    secs.forEach(function(s){
+      var hit=0;
+      s.querySelectorAll(".setlist dt").forEach(function(dt){
+        var dd=dt.nextElementSibling,txt=(dt.dataset.t+" "+dd.textContent).toLowerCase(),m=!q||txt.indexOf(q)>-1;
+        dt.classList.toggle("hide",!m);dd.classList.toggle("hide",!m);
+        dt.textContent=dt.dataset.t;
+        if(q&&m){hit++;var i=dt.dataset.t.toLowerCase().indexOf(q);if(i>-1){var t=dt.dataset.t;dt.innerHTML="";dt.append(t.slice(0,i));var mk=document.createElement("mark");mk.textContent=t.slice(i,i+q.length);dt.append(mk,t.slice(i+q.length))}}
+      });
+      if(q){s.hidden=hit===0;s.open=hit>0}else{s.hidden=false}
+      total+=hit;
+    });
+    cnt.textContent=q?(total+" match"+(total===1?"":"es")):"";
+    none.hidden=!q||total>0;
+  }
+  if(find){find.addEventListener("input",runFind)}
 })();
 </script>
 
