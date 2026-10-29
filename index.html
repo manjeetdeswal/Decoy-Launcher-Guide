@@ -329,6 +329,8 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
           <div class="card"><h4>Select several apps</h4><p>A floating bar to put them in a folder, remove, hide or lock them in one go. <a href="#icons">More</a></p></div>
           <div class="card"><h4>Recent &amp; new apps</h4><p>Optional rows at the top of the app drawer. <a href="#drawer">More</a></p></div>
           <div class="card"><h4>Clearer draw to reveal</h4><p>Step by step setup, and a hint that shows where to draw. <a href="#draw">More</a></p></div>
+          <div class="card"><h4>Phone mode</h4><p>A mode with only Decoy Phone, a dialer that calls just the contacts you add. It can go in any other mode too. <a href="#profiles">More</a></p></div>
+          <div class="card"><h4>Modes in one row</h4><p>All your modes as a row of icons: at the top of the widget list, and as a Modes row on the widget page. <a href="#widgets">More</a></p></div>
           <div class="card"><h4>Full-screen music player</h4><p>Quick Open's player now fills the screen, matches the album art and takes swipes and double taps. <a href="#widget-list">More</a></p></div>
         </div>
       </section>
@@ -384,6 +386,7 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
           <div class="card"><h4>Location</h4><p>Android only shows the Wi-Fi name to apps with location access. Needed for trusted networks and Wi-Fi-based hiding rules.</p></div>
           <div class="card"><h4>Calendar</h4><p>To show your next event in At a Glance.</p></div>
           <div class="card"><h4>Contacts</h4><p>Only when you turn on Contacts in search results, to find people by name or number. Nothing reads your contacts until then.</p></div>
+          <div class="card"><h4>Phone calls</h4><p>Only when you turn on Call directly from search, so the call button starts the call instead of opening the dialler.</p></div>
         </div>
       </section>
     </div>
@@ -557,11 +560,14 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
           <li><div>Under <b>Leaving a profile</b>, choose the phone's screen lock or a separate <b>profile PIN</b> (4 to 12 digits). Use a profile PIN if whoever borrows the phone already knows its PIN. A mode can't start until one of these is set.</div></li>
           <li><div>Open <b>Kid</b> or <b>Guest</b> and pick its <b>Allowed apps</b>.</div></li>
           <li><div>Optional: hide the status and navigation bars, <b>Lock every other app</b>, and set a <b>Time limit</b>.</div></li>
-          <li><div>Start the mode with a gesture (<b>Enter Kid mode</b> or <b>Enter Guest mode</b> in Settings › Gestures) or tap <b>Add Widget to Home</b> to put a shortcut on your home screen.</div></li>
+          <li><div>Start the mode with a gesture (<b>Enter Kid mode</b>, <b>Enter Guest mode</b> or <b>Enter Phone mode</b> in Settings › Gestures), the <b>Enter</b> button on the Profiles page, a mode's icon dragged from the <b>Modes</b> row in the home screen's widget list, or the <b>Modes row</b> on the widget page.</div></li>
         </ol>
+        <div class="note"><b>Setting up Decoy Phone:</b> open Phone mode (or any mode with Decoy Phone ticked) › <b>Phone contacts</b>. Add people <b>From contacts</b> (a copy is kept in Decoy, no contacts permission needed) or <b>Type a number</b>. Reorder or remove them there; your phone's own contacts are never changed. Allow <b>calls to start straight away</b> so tapping someone calls them instead of opening the phone's dialler, which would show all your real contacts. The <b>Keypad</b> switch lets anyone type any number. It's set for each mode: on at first in Phone, Guest and your own modes, off at first in Kid mode. Phone mode opens on the keypad, with Contacts as the second tab. Every call made from Decoy Phone is saved and listed above the keypad, like the Google Phone app, until you start typing a number (with the keypad off, the last few show above the contacts). They're kept separately for each mode, so one mode never sees another's calls. Under Phone contacts, see or clear a mode's <b>Call history</b>, or turn on <b>Clear call history each time [the mode] starts</b> so the recent calls are empty every time someone enters the mode. Enter Phone mode from the Profiles page, a gesture (<b>Enter Phone mode</b>) or its home-screen shortcut.</div>
         <div class="cols">
           <div class="card"><h4>Time's up</h4><p>When the time limit runs out, the screen says so. Unlock to add 15 minutes or to exit.</p></div>
           <div class="card"><h4>Custom modes</h4><p><b>Create a mode</b> with your own name, icon, app list and rules.</p></div>
+          <div class="card"><h4>Phone mode</h4><p>A mode that shows only <b>Decoy Phone</b>: big contact cards to tap and call, and nothing else. Hand the phone to a child or an older relative and they can call the people you picked, without seeing your real contacts, call log or apps.</p></div>
+          <div class="card"><h4>Decoy Phone in any mode</h4><p>Tick <b>Decoy Phone</b> at the top of any mode's Allowed apps and it appears there as a Phone tile. Set who it lists under the mode's <b>Phone contacts</b>.</p></div>
           <div class="card"><h4>Staying sealed</h4><p>With the accessibility service on, the notification panel is closed again as soon as it's pulled down, and apps outside the list are sent back.</p></div>
         </div>
       </section>
@@ -725,7 +731,7 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
           <thead><tr><th>Result</th><th>What you get</th></tr></thead>
           <tbody>
             <tr><td><b>Apps &amp; shortcuts</b></td><td>With notification dots, like everywhere else.</td></tr>
-            <tr><td><b>Contacts</b></td><td>Off until you turn it on, which asks for access to contacts. Find people by name or by 3+ digits of their number, with their photo, and <b>call</b> or <b>message</b> buttons. Call opens the dialler with the number in; it never calls by itself.</td></tr>
+            <tr><td><b>Contacts</b></td><td>Off until you turn it on, which asks for access to contacts. Find people by name or by 3+ digits of their number, with their photo, and <b>call</b> or <b>message</b> buttons. Call opens the dialler with the number in. Turn on <b>Call directly from search</b> (it asks for permission to make calls) and the call starts straight away. Emergency numbers always go to the dialler.</td></tr>
             <tr><td><b>Web search</b></td><td>"Search Web" with the engine you picked under Search engine.</td></tr>
             <tr><td><b>Suggestions while typing</b></td><td>The engine's own suggestions appear above "Search Web" a moment after you stop typing. Tap one to search it, or ↖ to put it in the search box. Startpage, Mojeek, SearXNG and Baidu don't offer them.</td></tr>
             <tr><td><b>Android settings</b></td><td>Wi-Fi, Bluetooth, display and so on. Off by default.</td></tr>
@@ -778,7 +784,7 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
       <section class="feat" id="widgets">
         <div class="feat-head"><h3>Adding and editing widgets</h3></div>
         <ol class="steps">
-          <li><div>Long-press an empty spot on the home screen and tap <b>Widgets</b>. Decoy's widgets come first, grouped as Productivity, Shortcuts &amp; files, Phone &amp; system, Connections, Money, Media, Fun and Profiles. Every other app's widgets follow. Search at the top finds any of them.</div></li>
+          <li><div>Long-press an empty spot on the home screen and tap <b>Widgets</b>. At the very top, a <b>Modes</b> row holds Kid, Guest, Phone and your own modes as round icons (it scrolls sideways); drag one onto the home screen for a one-tap way into that mode. Decoy's widgets come next, grouped as Productivity, Shortcuts &amp; files, Phone &amp; system, Connections, Money, Media and Fun. Every other app's widgets follow. Search at the top finds any of them.</div></li>
           <li><div>Long-press a widget in the list and drop it on the home screen.</div></li>
           <li><div>To change it, long-press the widget on the home screen and tap the gear. To resize it, long-press and drag its edges.</div></li>
         </ol>
@@ -790,7 +796,8 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
           <div class="card"><h4>Size &amp; tap</h4><p>Width and height in cells. <b>When the widget is tapped</b>: its default, open an app you choose, or nothing. And <b>Secret tap</b>.</p></div>
         </div>
         <div class="note"><b>Secret tap</b> turns any widget into a hidden door. Choose a pattern (3 quick taps, 5 quick taps, or tap-tap, pause, tap-tap) and what it opens: reveal hidden apps, a vault, the file vault, or Decoy settings, after your PIN or fingerprint. Nothing happens on screen otherwise, and normal use of the widget's buttons never counts.</div>
-        <p><b>Widget page:</b> under Home screen › Feed, pick Decoy's widget page. Swipe right from the first home page to open a full column of widgets. Tap <b>Edit</b> there to add, reorder, resize or remove them. It starts with media, batteries, habits, screen time and contacts.</p>
+        <p><b>Widget page:</b> under Home screen › Feed, pick Decoy's widget page. Swipe right from the first home page to open a full column of widgets. Tap <b>+</b> to add widgets and the pencil to reorder, resize or remove them. It starts with media, batteries, habits, screen time and contacts.</p>
+        <div class="note"><b>Modes on the widget page:</b> tap <b>+</b> and pick <b>Modes row</b> (first in the list). It sits under the date as one row of your mode icons, the same card style as the other widgets; tap a mode to enter it. Remove it with the pencil, and add it back from + any time.</div>
       </section>
 
       <section class="feat" id="widget-list">
@@ -1285,7 +1292,7 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
             <dt>Edge slides</dt><dd>Left and right edges: off, brightness or volume.</dd>
             <dt>Shake phone</dt><dd>An action when you shake the phone on the home screen.</dd>
           </dl>
-          <p class="refnote">Actions you can assign: do nothing; sleep; recents; notification panel; quick settings; split-screen pair; app drawer (with or without search); search screen; your search engine's website; any app; assistant; Kid or Guest mode; draw to reveal; file vault; Decoy settings; widget page; sidebar; torch; screenshot; volume up, down, slider or mute; ring → vibrate → silent; brightness up, down or panel; play/pause, next, previous; power menu; last app; camera; phone; calendar; clock; phone settings; change wallpaper; a quick toggle; open a hidden app.</p>
+          <p class="refnote">Actions you can assign: do nothing; sleep; recents; notification panel; quick settings; split-screen pair; app drawer (with or without search); search screen; your search engine's website; any app; assistant; Kid, Guest or Phone mode; draw to reveal; file vault; Decoy settings; widget page; sidebar; torch; screenshot; volume up, down, slider or mute; ring → vibrate → silent; brightness up, down or panel; play/pause, next, previous; power menu; last app; camera; phone; calendar; clock; phone settings; change wallpaper; a quick toggle; open a hidden app.</p>
         </details>
 
         <details class="refsec">
