@@ -272,6 +272,8 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
 
 <div class="wrap layout">
   <aside class="toc" aria-label="Contents">
+    <h4>New</h4>
+    <a href="#new">What's new</a>
     <h4>Basics</h4>
     <a href="#start">Get started</a>
     <a href="#settings">Finding settings</a>
@@ -290,11 +292,14 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
     <a href="#profiles">Kid &amp; Guest mode</a>
     <a href="#mindful">Mindful friction</a>
     <h4>Home &amp; folders</h4>
-    <a href="#home">Layouts</a>
+    <a href="#home">Layouts &amp; pages</a>
     <a href="#icons">App icons</a>
+    <a href="#dock">Dock</a>
     <a href="#folders">Folders</a>
     <a href="#expand">Enlarged folders</a>
     <a href="#drawer">App drawer</a>
+    <a href="#search">Search</a>
+    <a href="#clones">Cloned &amp; work apps</a>
     <h4>Widgets</h4>
     <a href="#widgets">Adding &amp; editing</a>
     <a href="#widget-list">Every widget</a>
@@ -309,6 +314,26 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
   </aside>
 
   <main>
+    <!-- WHAT'S NEW -->
+    <div class="part">
+      <section class="feat" id="new">
+        <div class="feat-head"><h3>What's new</h3></div>
+        <p>The latest additions to Decoy. Each one links to where it's explained in full.</p>
+        <div class="cols">
+          <div class="card"><h4>Cloned &amp; work apps</h4><p>Dual apps, Dual Messenger, App cloner and work-profile apps now show up, with a badge on the icon. <a href="#clones">More</a></p></div>
+          <div class="card"><h4>A dock you arrange</h4><p>Add, remove and reorder dock apps. Icons slide apart while you hold an app over the dock. <a href="#dock">More</a></p></div>
+          <div class="card"><h4>Faster search</h4><p>Apps come first, right above the keyboard, and Enter opens the top one. Contacts and live web suggestions too. <a href="#search">More</a></p></div>
+          <div class="card"><h4>Folders that open by their icon</h4><p>Choose where a folder opens and how it animates, add apps with +, and pick its colour. <a href="#folders">More</a></p></div>
+          <div class="card"><h4>Your own window colours</h4><p>Separate colours for folders, the app drawer, the search screen, result cards and menus. <a href="#colours">More</a></p></div>
+          <div class="card"><h4>Home pages</h4><p>Add, move and remove pages, tidy up gaps, and reset customised icons. <a href="#home">More</a></p></div>
+          <div class="card"><h4>Select several apps</h4><p>A floating bar to put them in a folder, remove, hide or lock them in one go. <a href="#icons">More</a></p></div>
+          <div class="card"><h4>Recent &amp; new apps</h4><p>Optional rows at the top of the app drawer. <a href="#drawer">More</a></p></div>
+          <div class="card"><h4>Clearer draw to reveal</h4><p>Step by step setup, and a hint that shows where to draw. <a href="#draw">More</a></p></div>
+          <div class="card"><h4>Full-screen music player</h4><p>Quick Open's player now fills the screen, matches the album art and takes swipes and double taps. <a href="#widget-list">More</a></p></div>
+        </div>
+      </section>
+    </div>
+
     <!-- BASICS -->
     <div class="part">
       <div class="part-head">
@@ -358,6 +383,7 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
           <div class="card"><h4>Camera</h4><p>Only for the intruder snapshot, a front-camera photo taken after too many wrong PINs.</p></div>
           <div class="card"><h4>Location</h4><p>Android only shows the Wi-Fi name to apps with location access. Needed for trusted networks and Wi-Fi-based hiding rules.</p></div>
           <div class="card"><h4>Calendar</h4><p>To show your next event in At a Glance.</p></div>
+          <div class="card"><h4>Contacts</h4><p>Only when you turn on Contacts in search results, to find people by name or number. Nothing reads your contacts until then.</p></div>
         </div>
       </section>
     </div>
@@ -392,9 +418,10 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
         <p>Draw a letter or shape of your own on the home screen to reveal hidden apps, with nothing typed. A wrong shape does nothing at all, so anyone watching sees nothing happen.</p>
         <ol class="steps">
           <li><div>Tap <b>Draw a shape</b> and draw it three times the same way. Several strokes are fine.</div></li>
+          <li><div>Tap <b>Choose the gesture that opens it</b> and set a gesture, such as double tap, to <b>Draw to reveal hidden apps</b>. That gesture opens the drawing pad; without one there's nowhere to draw, and the page warns you. A Draw to reveal button on the search bar or the sidebar works too.</div></li>
           <li><div>Pick something with a few turns: a Z, an S, a star or your initial. Decoy refuses lines and single curves, since a random swipe could match them.</div></li>
           <li><div>Under <b>After the right shape</b>, choose what happens: reveal hidden apps and open the drawer, reveal them and stay on the home screen, open the file vault, open Decoy settings, open a vault, or open any app.</div></li>
-          <li><div>Turn <b>Show what you draw</b> off if you don't want a faint line to appear while drawing.</div></li>
+          <li><div><b>Show a hint when the pad opens</b> puts a faint frame and "Draw your shape" on screen so you know where to draw. Turn it off, and <b>Show what you draw</b> (the faint line), to leave the screen looking untouched.</div></li>
         </ol>
         <div class="note"><b>Secret tap on a widget:</b> add any Decoy widget, open its settings and turn on Secret tap. Choose 3 quick taps, 5 quick taps, or 2 + 2 (two taps, a short pause, two more). Normal use of the widget's buttons never counts as a secret tap.</div>
       </section>
@@ -573,11 +600,16 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
           </tbody>
         </table></div>
         <p>Each layout remembers its own home screen, so switching back brings it back as you left it. Long-press an empty spot on the home screen for the home menu: <b>Wallpaper and style</b>, <b>Widgets</b>, <b>Home settings</b> and <b>System settings</b>. You choose which of these appear under Home screen › Pop-up menu.</p>
+        <div class="cols">
+          <div class="card"><h4>Add, move and remove pages</h4><p>Settings › Home screen › <b>Pages</b>: <b>Add a page</b>, then <b>Move earlier</b>, <b>Move later</b> or <b>Remove page</b> (it asks first). The first page always stays first. Up to 20 pages.</p></div>
+          <div class="card"><h4>Tidy up icons</h4><p>Settings › Home screen › Home screen actions › <b>Tidy up icons</b> packs apps together and closes the gaps. Your first page keeps its layout, and hidden apps' icons are taken off the home screen.</p></div>
+          <div class="card"><h4>Reset icon names and pictures</h4><p>In the same place: every app goes back to its own name and icon. It asks before doing it.</p></div>
+        </div>
       </section>
 
       <section class="feat" id="icons">
         <div class="feat-head"><h3>App icons</h3></div>
-        <p>Tap an icon to open the app. Long-press it for its menu. What the menu shows depends on where the icon is:</p>
+        <p>Tap an icon to open the app. Long-press it for its menu, which opens just above the icon (below it when there's no room above). What the menu shows depends on where the icon is:</p>
         <div class="tbl"><table>
           <thead><tr><th>Menu item</th><th>What it does</th></tr></thead>
           <tbody>
@@ -587,10 +619,11 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
             <tr><td><b>Widgets</b></td><td>That app's widgets, ready to place.</td></tr>
             <tr><td><b>Customise</b></td><td>Change the icon's name, pick a new icon picture from your gallery, or tick <b>Hide from app drawer</b>.</td></tr>
             <tr><td><b>Resize</b></td><td>Grow the icon into an <b>app tile</b> that also shows the app's shortcuts (see below).</td></tr>
-            <tr><td><b>Select multiple</b></td><td>Tick several icons, then move them together or put them in a folder.</td></tr>
+            <tr><td><b>Select multiple</b></td><td>Tick several icons. A floating bar at the bottom offers <b>Folder</b>, <b>Remove</b> (from the home screen), <b>Hide</b> and <b>Lock</b> for all of them at once, and you can drag them together. The Google folder and Play Store can be ticked too. Tap × to finish.</td></tr>
+            <tr><td><b>Move left / Move right, Remove from dock</b></td><td>On a dock icon: change its place or take it off the dock. On a side dock it's Move up / Move down.</td></tr>
             <tr><td><b>Add to folder / Remove from folder</b></td><td>In the app drawer: put the app in one of the drawer's folders, or take it out.</td></tr>
             <tr><td><b>Arrange drawer</b></td><td>In the app drawer: turns on drag and drop so you can move apps between drawer folders.</td></tr>
-            <tr><td><b>App info / Uninstall</b></td><td>Android's page for the app, or remove it.</td></tr>
+            <tr><td><b>App info / Uninstall</b></td><td>Android's page for the app, or remove it. On a cloned app both open that copy's own App info, so the original is never removed by mistake.</td></tr>
           </tbody>
         </table></div>
         <div class="cols">
@@ -600,14 +633,41 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
         </div>
       </section>
 
+      <section class="feat" id="dock">
+        <div class="feat-head"><h3>The dock</h3></div>
+        <div class="path">Settings › Dock › <b>Dock apps</b></div>
+        <p>Up to 8 apps along the bottom. Decoy fills it for you (phone, messages, browser, camera) until you change it. After that it's yours, and it stays as you left it.</p>
+        <div class="cols">
+          <div class="card"><h4>Add an app</h4><p>Drag an app from the home screen or drawer over the dock. While you hold it there, the icons slide apart to show where it will land; let go to drop it in. On a full dock, a new app swaps places with the icon under your finger.</p></div>
+          <div class="card"><h4>Rearrange</h4><p>Hold a dock icon and drag it left or right: the gap follows your finger. Or long-press it and choose <b>Move left</b> or <b>Move right</b>.</p></div>
+          <div class="card"><h4>Remove</h4><p>Long-press › <b>Remove from dock</b>, drag it onto the home screen (it moves there), or drag it onto <b>Remove</b>.</p></div>
+          <div class="card"><h4>From settings</h4><p>The Dock page lists your dock apps with move and remove buttons, <b>Add an app to the dock</b>, and <b>Back to automatic</b> to let Decoy choose again.</p></div>
+        </div>
+      </section>
+
       <section class="feat" id="folders">
         <div class="feat-head"><h3>Folders</h3></div>
         <p>Drag one app onto another on the home screen to make a folder. Decoy names it; hold the folder and tap the pencil to rename it.</p>
         <div class="cols">
-          <div class="card"><h4>Inside a folder</h4><p>Tap a folder to open it. Hold an app inside and drag it over another app to reorder: everything between them shifts one place. Drag up or down out of the folder to take an app out. Big folders can split into pages you swipe sideways.</p></div>
+          <div class="card"><h4>Inside a folder</h4><p>Tap a folder and it grows out of its own icon, opening just above it. Hold an app inside and drag it over another app to reorder: everything between them shifts one place. Drag up or down out of the folder to take an app out. Tap <b>+</b> next to the name to pick apps to add. Big folders can split into pages you swipe sideways.</p></div>
           <div class="card"><h4>The folder menu</h4><p>Hold a folder for: <b>Rename</b> (the pencil), <b>Select</b>, <b>Enlarge</b> or <b>Shrink</b>, <b>Remove</b>, and on an enlarged folder <b>Folder layout</b> and <b>Move or resize</b>.</p></div>
           <div class="card"><h4>Drawer folders</h4><p>In the app drawer, choose <b>Add to folder</b> or <b>Put in folder</b> after selecting apps. Folder options let you rename it, add apps with +, move it earlier or later, delete it (its apps go back to the list), or <b>Add to home screen</b> as a home-screen folder with the same apps.</p></div>
         </div>
+        <h4 style="margin-top:26px">How folders open</h4>
+        <div class="path">Settings › Folders › <b>Opening</b></div>
+        <div class="tbl"><table>
+          <thead><tr><th>Setting</th><th>Choices</th></tr></thead>
+          <tbody>
+            <tr><td><b>Where it opens</b></td><td>Above the icon (default), Below the icon, Whichever side has more room, Over the icon, or Middle of the screen. It always stays on screen: if it doesn't fit on the side you chose, it opens on the other side.</td></tr>
+            <tr><td><b>Animation</b></td><td>Grow from the icon (default), Pop (grows with a bounce), Zoom in, Slide in (from the icon's side), Fade, or None.</td></tr>
+            <tr><td><b>Animation length</b></td><td>80 ms to 1 second (default 280 ms). Closing takes a little less.</td></tr>
+            <tr><td><b>Space from the icon</b></td><td>0 to 40 dp between the folder and its icon.</td></tr>
+            <tr><td><b>Dim behind</b></td><td>How dark the home screen gets behind an open folder, 0 to 90%.</td></tr>
+            <tr><td><b>Folder name</b></td><td>Below the apps, Above the apps, or Hidden (the + stays).</td></tr>
+            <tr><td><b>Keep open after opening an app</b></td><td>The folder is still open when you come back home.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><b>Folder colour:</b> Settings › Folders › Folder background › <b>Background colour</b> replaces the glass or grey with a colour of your own, see-through if you like. Names inside turn dark on a light colour.</div>
       </section>
 
       <section class="feat" id="expand">
@@ -650,7 +710,60 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
       <section class="feat" id="drawer">
         <div class="feat-head"><h3>App drawer</h3></div>
         <div class="path">Swipe up on the home screen</div>
-        <p>Every app in one place, with a search bar at the top. The drawer's search bar is the only place to type your secret code or a vault PIN. Drag the A to Z scrollbar to jump to a letter. With categories on, a row of category names at the top jumps between groups like Social, Finance and Games.</p>
+        <p>Every app in one place, with a search bar. The drawer's search bar is the only place to type your secret code or a vault PIN. Drag the A to Z scrollbar to jump to a letter. With categories on, a row of category names at the top jumps between groups like Social, Finance and Games.</p>
+        <div class="cols">
+          <div class="card"><h4>Recent &amp; new apps</h4><p>Settings › App drawer › Top of the list: <b>Recent apps</b> (the apps you opened last) and <b>New apps</b> (installed in the last 7 days, newest first) as rows above the list.</p></div>
+          <div class="card"><h4>Drawer colour</h4><p>Settings › App drawer › Style › <b>Background colour</b> in place of the dimmed wallpaper. App names turn dark on a light colour.</p></div>
+        </div>
+      </section>
+
+      <section class="feat" id="search">
+        <div class="feat-head"><h3>Search</h3></div>
+        <div class="path">Settings › Search bar › <b>Show in search results</b></div>
+        <p>Results build up from the bottom, so the best match sits right above the keyboard where your thumb is. Apps come first, best match first: the exact name, then names starting with what you typed, then a word inside the name ("Maps" finds Google Maps). Press Enter on the keyboard to open the top app; with no app matching, Enter searches the web.</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Result</th><th>What you get</th></tr></thead>
+          <tbody>
+            <tr><td><b>Apps &amp; shortcuts</b></td><td>With notification dots, like everywhere else.</td></tr>
+            <tr><td><b>Contacts</b></td><td>Off until you turn it on, which asks for access to contacts. Find people by name or by 3+ digits of their number, with their photo, and <b>call</b> or <b>message</b> buttons. Call opens the dialler with the number in; it never calls by itself.</td></tr>
+            <tr><td><b>Web search</b></td><td>"Search Web" with the engine you picked under Search engine.</td></tr>
+            <tr><td><b>Suggestions while typing</b></td><td>The engine's own suggestions appear above "Search Web" a moment after you stop typing. Tap one to search it, or ↖ to put it in the search box. Startpage, Mojeek, SearXNG and Baidu don't offer them.</td></tr>
+            <tr><td><b>Android settings</b></td><td>Wi-Fi, Bluetooth, display and so on. Off by default.</td></tr>
+            <tr><td><b>Calculator, Search history</b></td><td>Sums worked out as you type, and your recent searches when the box is empty.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="note"><b>Your secrets stay on the phone:</b> suggestions send what you type to the search engine, so nothing is sent while what you've typed could be the start of your secret code or file vault code, or contains one. Anything without a letter is never sent either, so vault PINs never leave the phone. Turn suggestions off completely with the switch.</div>
+        <div class="note"><b>Search colours:</b> Settings › Search bar › Search screen colours sets the <b>Screen background</b> behind search and the <b>Result cards</b>. The bar's own colours are under Search bar › Colours.</div>
+      </section>
+
+      <section class="feat" id="colours">
+        <div class="feat-head"><h3>Window colours</h3></div>
+        <p>Every window can have a background colour of its own, see-through if you like. Each one is on the settings page for that window, and ↺ puts it back to automatic.</p>
+        <div class="tbl"><table>
+          <thead><tr><th>Window</th><th>Where to set it</th></tr></thead>
+          <tbody>
+            <tr><td><b>Opened folders</b></td><td>Folders › Folder background › Background colour</td></tr>
+            <tr><td><b>App drawer</b></td><td>App drawer › Style › Background colour</td></tr>
+            <tr><td><b>Search screen</b> and <b>result cards</b></td><td>Search bar › Search screen colours</td></tr>
+            <tr><td><b>App, folder and home menus</b></td><td>Home screen › Pop-up menu › Look › Background colour</td></tr>
+            <tr><td><b>Search bar</b></td><td>Search bar › Colours</td></tr>
+            <tr><td><b>Dock</b></td><td>Dock › Style (once Show background is on)</td></tr>
+          </tbody>
+        </table></div>
+        <p>Text and names switch to dark on a light colour so they stay readable.</p>
+      </section>
+
+      <section class="feat" id="clones">
+        <div class="feat-head"><h3>Cloned &amp; work apps</h3></div>
+        <div class="path">Settings › App drawer › <b>Cloned &amp; work apps</b></div>
+        <p>Many phones can run a second copy of an app: Dual apps (Xiaomi, Redmi, POCO), Dual Messenger (Samsung), App cloner or Parallel apps (OnePlus, Oppo, Realme, Vivo), and app cloning on Android 14 and later. Decoy shows those copies, and work-profile apps, alongside your other apps.</p>
+        <div class="cols">
+          <div class="card"><h4>The badge</h4><p>A small badge in the icon's corner: two sheets for a clone, a briefcase for a work app. Turn on <b>Add (Clone) or (Work) to names</b> to label them as well.</p></div>
+          <div class="card"><h4>Their own app everywhere</h4><p>Put a clone on the home screen or dock, hide, lock or disguise it, all separately from the original. Its notification dots and shortcuts are its own.</p></div>
+          <div class="card"><h4>Safe to remove</h4><p>Uninstall on a clone opens that copy's App info page, so you can't remove the original by mistake.</p></div>
+          <div class="card"><h4>Paused work apps</h4><p>Tapping a work app while work apps are paused asks Android to turn them back on.</p></div>
+        </div>
+        <div class="note warn"><b>Not showing?</b> Some phones don't let other launchers see cloned apps. If the setting says there are none on your phone, Android isn't sharing them with Decoy. Apps in Android 15's Private space are left out on purpose, so they stay private.</div>
       </section>
     </div>
 
@@ -763,6 +876,7 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
             <dl>
               <dt>Settings</dt><dd>Layout (icons, cards, list or chips); which files and which types; most shown; names, details and play badges; + button. Privacy: previews on or off, blur previews, hide file names. Opening files with the built-in player, the phone's default app, or ask every time.</dd>
               <dt>Tap opens</dt><dd>The Quick Open app: groups, pins, sorting, private copies of new files, and missing-file finder.</dd>
+              <dt>Music player</dt><dd>Full screen, with big album art and colours taken from it. Swipe the art left or right for the next or previous song; double-tap its left or right side to go back or forward 10 seconds. Speed and volume controls underneath. It stops using the battery as soon as you leave it.</dd>
             </dl>
           </article>
 
@@ -994,7 +1108,8 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
           <dl class="setlist">
             <dt>Add app icons to home screen</dt><dd>Put newly installed apps on the home screen.</dd>
             <dt>Infinite scrolling</dt><dd>Swipe past the last page to get back to the first. Needs 3 or more pages.</dd>
-            <dt>Pages</dt><dd>A name and a wallpaper dim for each page.</dd>
+            <dt>Pages</dt><dd>A name and a wallpaper dim for each page. Add a page, Move earlier, Move later, Remove page (the first page stays first; up to 20).</dd>
+            <dt>Home screen actions</dt><dd>Tidy up icons closes the gaps (your first page keeps its layout). Reset icon names and pictures puts back every app's own name and icon.</dd>
             <dt>Show page name on swipe</dt><dd>A named page flashes its name as you swipe onto it.</dd>
             <dt>Clear home screen</dt><dd>Remove every app, folder and widget from the pages. Apps stay installed.</dd>
             <dt>Feed</dt><dd>What swiping right from the first page opens: Decoy's widget page, another feed app's panel, or nothing.</dd>
@@ -1011,7 +1126,7 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
             <dt>Show dot pagination</dt><dd>Dots instead of lines for the page indicator.</dd>
             <dt>Show search bar</dt><dd>A search bar below the dock that opens the app drawer.</dd>
             <dt>Use new pop-up style</dt><dd>Material You's bouncy pop-up menus.</dd>
-            <dt>Edit pop-up menu items</dt><dd>Show or hide Wallpaper and style, Widgets, Home settings and System settings in the home menu.</dd>
+            <dt>Edit pop-up menu items</dt><dd>Show or hide Wallpaper and style, Widgets, Home settings and System settings in the home menu. Look › Background colour sets the colour of every app, folder and home menu.</dd>
             <dt>Show status bar / Dark status bar</dt><dd>Show the status bar on the home screen, and use dark icons in it.</dd>
             <dt>Icon size, Show labels, Label size</dt><dd>Icons on the home screen.</dd>
             <dt>Widget rounded corners</dt><dd>Round every widget's corners, with a radius.</dd>
@@ -1030,7 +1145,10 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
             <dt>Separate apps by letter</dt><dd>A–Z section headers in the scrolling list.</dd>
             <dt>Group app drawer by category</dt><dd>Group under Social, Finance, Games and so on. Choose categories to move apps between them.</dd>
             <dt>Hidden &amp; Locked Apps</dt><dd>Opens the per-app security rules.</dd>
+            <dt>Top of the list</dt><dd>Recent apps and New apps (last 7 days) as rows above the list.</dd>
+            <dt>Cloned &amp; work apps</dt><dd>Show cloned and work-profile apps with a badge, and optionally add (Clone) or (Work) to their names. See <a href="#clones">Cloned &amp; work apps</a>.</dd>
             <dt>Separated search bar background</dt><dd>Give the drawer's search bar its own background.</dd>
+            <dt>Background colour</dt><dd>The drawer's own colour in place of the dimmed wallpaper.</dd>
             <dt>Icon size, Show labels, Label size, Use multiple lines</dt><dd>Icons and names in the drawer.</dd>
             <dt>Remember position</dt><dd>Reopen the drawer where you left it.</dd>
             <dt>Show scrollbar / Letters on scrollbar</dt><dd>The A–Z rail always, a thin bar, or a thin bar that turns into letters while you drag.</dd>
@@ -1114,7 +1232,7 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
           <dl class="setlist">
             <dt>Show dock</dt><dd>The row of apps at the bottom.</dd>
             <dt>Show background</dt><dd>A background behind the dock, with colour and alpha.</dd>
-            <dt>Dock apps</dt><dd>Chosen automatically (phone, messages, browser, camera) until you drag an app onto the dock.</dd>
+            <dt>Dock apps</dt><dd>Chosen automatically (phone, messages, browser, camera) until you change them. Then: your dock apps with move and remove buttons, Add an app to the dock, and Back to automatic. Up to 8. See <a href="#dock">The dock</a>.</dd>
             <dt>Search bar settings</dt><dd>Opens the Search bar page.</dd>
             <dt>Spacing</dt><dd>Page dots to icons, and icons to search bar. Reset spacing restores the defaults.</dd>
             <dt>Icon size, Show labels</dt><dd>Dock icons.</dd>
@@ -1135,7 +1253,8 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
             <dt>Corner radius, background opacity, outline</dt><dd>The bar's shape and edge, with an outline colour.</dd>
             <dt>Colours</dt><dd>Background, icons and text.</dd>
             <dt>Placeholder text</dt><dd>Google, Search apps and web, Find anything, What's up?, nothing, or your own.</dd>
-            <dt>Show in search results</dt><dd>Apps &amp; shortcuts, web suggestions, Android settings, search history, calculator. Clear search history.</dd>
+            <dt>Search screen colours</dt><dd>Screen background and Result cards.</dd>
+            <dt>Show in search results</dt><dd>Apps &amp; shortcuts, web search, Suggestions while typing, Contacts (asks for access when turned on), Android settings, search history, calculator. Contacts and Android settings start off. Clear search history. See <a href="#search">Search</a>.</dd>
           </dl>
         </details>
 
@@ -1144,7 +1263,8 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
           <dl class="setlist">
             <dt>Glass material</dt><dd>Glass folder icons (also on when app icons use glass), with tint and opacity.</dd>
             <dt>Icon background colour</dt><dd>Same as app icons, or its own.</dd>
-            <dt>Folder background</dt><dd>The opened folder: frosted white in light mode, grey in dark, or your colour. Blur wallpaper behind (Android 12+), blur strength, tint strength, corner radius.</dd>
+            <dt>Opening</dt><dd>Where it opens, Animation, Animation length, Space from the icon, Dim behind, Folder name position, Keep open after opening an app. See <a href="#folders">Folders</a>.</dd>
+            <dt>Folder background</dt><dd>The opened folder: frosted white in light mode, grey in dark. Background colour for one of your own. Blur wallpaper behind (Android 12+), blur strength, tint strength, corner radius.</dd>
             <dt>Split into pages</dt><dd>Swipe sideways inside big folders instead of scrolling, with a page indicator.</dd>
             <dt>Opened folder</dt><dd>Columns and rows per page.</dd>
             <dt>Enlarged folder</dt><dd>Default width, height and apps per row for folders you enlarge.</dd>
@@ -1258,7 +1378,7 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
         </details>
         <details>
           <summary>Does any of this leave my phone?</summary>
-          <p>No. Hiding, locking, disguises and decoys are all stored on the device. Intruder photos and file vault contents stay on the phone, and PINs and codes are kept out of backups.</p>
+          <p>No. Hiding, locking, disguises and decoys are all stored on the device. Intruder photos and file vault contents stay on the phone, and PINs and codes are kept out of backups. The one thing that goes online is what you type into search, and only if web suggestions are on (see below).</p>
         </details>
         <details>
           <summary>The trusted network option doesn't work.</summary>
@@ -1271,6 +1391,14 @@ mark{background:var(--gold-soft);color:var(--ink);border-radius:3px;padding:0 1p
         <details>
           <summary>The sidebar or a gesture says it needs the accessibility service.</summary>
           <p>Features that work over other apps, or that press system buttons for you, need it. Decoy shows what it does before you agree. Then find Decoy Launcher in Android's accessibility list and switch it on.</p>
+        </details>
+        <details>
+          <summary>My cloned apps don't show up.</summary>
+          <p>Check Settings › App drawer › Cloned &amp; work apps is on. If it says there are none on this phone, your phone isn't sharing its clones with other launchers, which some makers do. Private space apps are never listed, on purpose.</p>
+        </details>
+        <details>
+          <summary>Do web suggestions send my secret code to Google?</summary>
+          <p>No. Nothing is sent while what you've typed could become your secret code or file vault code, and nothing without a letter is sent, so vault PINs stay on the phone. You can also turn suggestions off under Search bar › Show in search results.</p>
         </details>
         <details>
           <summary>Will I lose my vault files if I uninstall?</summary>
