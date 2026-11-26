@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="A Kids profile with a daily time limit">
+<defs>
+  <linearGradient id="wall" x1="0" y1="0" x2="0.5" y2="1">
+    <stop offset="0" stop-color="#24372f"/><stop offset="1" stop-color="#0f1714"/>
+  </linearGradient>
+  <radialGradient id="glow"><stop offset="0" stop-color="#e2574c" stop-opacity="0.28"/><stop offset="1" stop-color="#e2574c" stop-opacity="0"/></radialGradient>
+  <clipPath id="screen"><rect x="12" y="12" width="616" height="347" rx="4"/></clipPath>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="6" stdDeviation="8" flood-opacity="0.4"/></filter>
+</defs>
+<path d="M250.0 396 L390.0 396 L360.0 373 L280.0 373 Z" fill="#26302b"/>
+<rect x="228.0" y="392" width="184" height="6" rx="3" fill="#323e38"/>
+<rect x="1" y="1" width="638" height="369" rx="12" fill="#0c100e" stroke="#36423c" stroke-width="2"/>
+<g clip-path="url(#screen)">
+<rect x="12" y="12" width="616" height="347" fill="url(#wall)"/>
+<ellipse cx="184.48000000000002" cy="22" rx="277.2" ry="173.5" fill="url(#glow)"/>
+<text x="40.0" y="54.0" font-family="Roboto, 'Segoe UI', Arial, sans-serif" font-size="30" fill="#eef3ef" font-weight="300" text-anchor="start" opacity="1.0">4:10</text><text x="120.0" y="45.0" font-family="Roboto, 'Segoe UI', Arial, sans-serif" font-size="12" fill="#eef3ef" font-weight="700" text-anchor="start" opacity="1.0">Kids</text><text x="120.0" y="60.0" font-family="Roboto, 'Segoe UI', Arial, sans-serif" font-size="10.5" fill="#a7b4ac" font-weight="400" text-anchor="start" opacity="1.0">45 minutes left today</text><rect x="508.0" y="32.0" width="92.0" height="26.0" rx="13" fill="#ffffff" opacity="0.12"/><text x="554.0" y="49.0" font-family="Roboto, 'Segoe UI', Arial, sans-serif" font-size="11" fill="#eef3ef" font-weight="600" text-anchor="middle" opacity="1.0">☺  Kids</text><rect x="33.0" y="105.0" width="191.3" height="113.8" rx="12" fill="#ffffff" stroke="#ffffff" stroke-width="1.6" opacity="0.14"/><rect x="36.0" y="108.0" width="185.3" height="107.8" rx="9" fill="#c8893a" opacity="1"/><text x="48.0" y="203.8" font-family="Roboto, 'Segoe UI', Arial, sans-serif" font-size="22.240000000000002" fill="#ffffff" font-weight="700" text-anchor="start" opacity="1">Cartoons</text><text x="128.7" y="230.8" font-family="Roboto, 'Segoe UI', Arial, sans-serif" font-size="10.5" fill="#eef3ef" font-weight="500" text-anchor="middle" opacity="1.0">Cartoons</text><rect x="231.3" y="112.0" width="177.3" height="99.8" rx="9" fill="#5a7a6b" opacity="1"/><text x="243.3" y="199.8" font-family="Roboto, 'Segoe UI', Arial, sans-serif" font-size="21.28" fill="#ffffff" font-weight="700" text-anchor="start" opacity="1">Learn</text><rect x="422.7" y="112.0" width="177.3" height="99.8" rx="9" fill="#b04848" opacity="1"/><text x="434.7" y="199.8" font-family="Roboto, 'Segoe UI', Arial, sans-serif" font-size="21.28" fill="#ffffff" font-weight="700" text-anchor="start" opacity="1">Games</text><text x="40.0" y="255.8" font-family="Roboto, 'Segoe UI', Arial, sans-serif" font-size="11" fill="#a7b4ac" font-weight="400" text-anchor="start" opacity="1.0">Only the apps you allow. Everything else stays locked.</text>
+</g>
+</svg>
