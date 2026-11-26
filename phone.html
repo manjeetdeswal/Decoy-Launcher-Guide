@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to use Decoy on your phone</title>
+<meta name="description" content="A step-by-step guide to Decoy Launcher on Android phones and tablets: hiding and locking apps, vaults, fake crash, Kid, Guest and Phone modes, Decoy Phone, Senior mode, gestures, widgets, animations and backups.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,600..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/main.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="2" width="28" height="28" rx="9" fill="currentColor"/><path d="M9 16.5 16 10l7 6.5V23H9z" fill="none" stroke="var(--bg)" stroke-width="2.2" stroke-linejoin="round"/><circle cx="22.5" cy="9.5" r="3.5" fill="var(--secret)"/></svg>
+      Decoy Launcher
+    </a>
+    <button class="icon-btn menu-btn" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="phone.html" aria-current="page">On your phone</a>
+      <a href="senior.html">Senior mode</a>
+      <a href="tv.html">On your TV</a>
+      <a href="index.html#faq">Questions</a>
+      <button class="icon-btn" data-theme-toggle type="button">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z" fill="currentColor"/></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="page-head">
+  <div class="wrap">
+    <p class="crumbs"><a href="index.html">Home</a> › On your phone</p>
+    <h1>How to use Decoy on your phone</h1>
+    <p>Every feature, where to find it and how to set it up, step by step. It works the same on Android phones and tablets.</p>
+  </div>
+</div>
+
+<div class="wrap guide">
+  <nav class="toc" aria-label="On this page">
+    <p>On this page</p>
+    <ol>
+      <li><a href="#start">Getting started</a></li>
+      <li><a href="#hide">Hide apps</a></li>
+      <li><a href="#reveal">Bring hidden apps back</a></li>
+      <li><a href="#vaults">Vaults</a></li>
+      <li><a href="#disguise">Disguise an app</a></li>
+      <li><a href="#lock">Lock apps</a></li>
+      <li><a href="#intruders">Intruder gallery</a></li>
+      <li><a href="#crash">Fake crash</a></li>
+      <li><a href="#files">File vault</a></li>
+      <li><a href="#modes">Kid, Guest and Phone modes</a></li>
+      <li><a href="#decoy-phone">Decoy Phone</a></li>
+      <li><a href="#senior">Senior mode</a></li>
+      <li><a href="#schedule">Sleeping mode and pauses</a></li>
+      <li><a href="#layout">Layouts and icons</a></li>
+      <li><a href="#widgets">Widgets</a></li>
+      <li><a href="#gestures">Gestures</a></li>
+      <li><a href="#sidebar">Sidebar</a></li>
+      <li><a href="#animations">Animations</a></li>
+      <li><a href="#backup">Backup and Keep apps</a></li>
+      <li><a href="#premium">Free and Premium</a></li>
+    </ol>
+  </nav>
+
+  <div>
+
+    <section class="topic" id="start">
+      <div class="topic-text">
+        <h2>Getting started</h2>
+        <ol class="steps">
+          <li>Install Decoy Launcher from <a href="https://play.google.com/store/apps/details?id=com.jeet_studio.decoy_launcher">Google Play</a> and open it.</li>
+          <li>Go through the short welcome. When Android asks which app to use as your home screen, pick <b>Decoy Launcher</b> and choose <b>Always</b>.</li>
+          <li>Press Home. Decoy is now your home screen.</li>
+        </ol>
+        <p>If Android didn't ask, set it yourself in the phone's Settings › Apps › Default apps › Home app.</p>
+        <h3>Opening Decoy's settings</h3>
+        <p class="where"><b>Where</b><span>Hold an empty spot on the home screen</span><i>›</i><span>Home settings</span></p>
+        <p>Settings has a search box at the top: type "lock", "hide" or "grid" to go straight to it. You can also set a gesture to <b>Open Decoy settings</b> (see <a href="#gestures">Gestures</a>).</p>
+        <p>Most of the private features are in one place: <b>Decoy Settings</b>, in the main settings list.</p>
+      </div>
+      <figure class="phone"><img src="assets/img/first-run.svg" alt="Decoy's welcome screen" width="230" height="474" loading="lazy"><figcaption>Welcome</figcaption></figure>
+    </section>
+
+    <section class="topic" id="hide">
+      <div class="topic-text">
+        <h2>Hide apps <span class="tag tag-secret">Secret</span></h2>
+        <p class="where"><b>Where</b><span>Decoy Settings</span><i>›</i><span>App hiding</span><i>›</i><span>Hide, lock, disguise &amp; fake-crash apps</span></p>
+        <ol class="steps">
+          <li>Open the list of apps and tap the one you want to hide.</li>
+          <li>Choose where it's hidden: the home screen, the app drawer, or both.</li>
+          <li>Optionally, only hide it at certain times or away from your home Wi-Fi.</li>
+        </ol>
+        <p>Hidden apps disappear from the home screen, the drawer and search. To hide an app from the drawer only, hold its icon, tap <b>Customise</b> and turn on <b>Hide from app drawer</b>.</p>
+        <h3>Search Only apps</h3>
+        <p>Some apps are better kept out of sight without a code. In Decoy Settings › Mindful friction › <b>Full-Name Search Only</b>, pick apps that only appear when someone types their exact, full name in search.</p>
+        <p class="note secret">Turn on notification scrubbing in App hiding so hidden apps' notification dots don't give them away.</p>
+      </div>
+      <figure class="phone"><img src="assets/img/hide-apps.svg" alt="Hidden apps showing after the secret code was typed" width="230" height="474" loading="lazy"><figcaption>Hidden apps, revealed</figcaption></figure>
+    </section>
+
+    <section class="topic" id="reveal">
+      <div class="topic-text">
+        <h2>Bring hidden apps back <span class="tag tag-secret">Secret</span></h2>
+        <h3>With a secret code</h3>
+        <p class="where"><b>Where</b><span>Decoy Settings</span><i>›</i><span>App hiding</span><i>›</i><span>Secret unlock code</span></p>
+        <ol class="steps">
+          <li>Choose your code.</li>
+          <li>Open the app drawer and type the code in its search box. Every hidden app appears.</li>
+          <li>Close the drawer and they're hidden again. Under <b>Reveal timeout</b> you can keep them showing for longer.</li>
+        </ol>
+        <h3>By drawing a shape</h3>
+        <p class="where"><b>Where</b><span>Decoy Settings</span><i>›</i><span>Settings lock &amp; secrets</span><i>›</i><span>Draw to reveal</span></p>
+        <ol class="steps">
+          <li>Draw your own shape, twice.</li>
+          <li>Choose the gesture that opens the drawing pad, for example a double tap at the top of the screen.</li>
+          <li>Choose what the right shape does: show the hidden apps, open a vault or the file vault.</li>
+        </ol>
+        <p>A <b>stealth widget</b> can reveal them too: it looks like an ordinary widget but answers to your own tap pattern.</p>
+      </div>
+      <figure class="phone"><img src="assets/img/draw-reveal.svg" alt="Drawing a shape on the screen to reveal hidden apps" width="230" height="474" loading="lazy"><figcaption>Draw to reveal</figcaption></figure>
+    </section>
+
+    <section class="topic" id="vaults">
+      <div class="topic-text">
+        <h2>Vaults <span class="tag tag-premium">Premium</span></h2>
+        <p class="where"><b>Where</b><span>Decoy Settings</span><i>›</i><span>App hiding</span><i>›</i><span>Vaults</span><i>›</i><span>Add a vault</span></p>
+        <p>A vault is a named group of hidden apps with a PIN of its own. Different PINs show different apps, so you can have a "work" vault and a "private" one, and showing one never shows the other.</p>
+        <ol class="steps">
+          <li>Tap <b>Add a vault</b>, give it a name and a PIN.</li>
+          <li>Pick the apps that go in it.</li>
+          <li>To open it, type the vault's PIN in the app drawer's search box.</li>
+        </ol>
+      </div>
+      <figure class="phone"><img src="assets/img/vaults.svg" alt="A list of vaults, each with its own apps" width="230" height="474" loading="lazy"><figcaption>Vaults</figcaption></figure>
+    </section>
+
+    <section class="topic" id="disguise">
+      <div class="topic-text">
+        <h2>Disguise an app <span class="tag tag-secret">Secret</span></h2>
+        <p class="where"><b>Where</b><span>Decoy Settings</span><i>›</i><span>App hiding</span><i>›</i><span>Hide, lock, disguise &amp; fake-crash apps</span></p>
+        <ol class="steps">
+          <li>Tap the app in the list.</li>
+          <li>Give it a disguise: a different name and a different icon, for example "Calculator".</li>
+        </ol>
+        <p>The app keeps working as normal; only its name and icon change on the home screen, in the drawer and in search.</p>
+      </div>
+      <figure class="phone"><img src="assets/img/disguise.svg" alt="Choosing a new name and icon for an app" width="230" height="474" loading="lazy"><figcaption>Disguise</figcaption></figure>
+    </section>
+
+    <section class="topic" id="lock">
+      <div class="topic-text">
+        <h2>Lock apps</h2>
+        <p class="where"><b>Where</b><span>Decoy Settings</span><i>›</i><span>App locking</span></p>
+        <ol class="steps">
+          <li>Under <b>Unlock method</b>, choose a <b>Launcher PIN</b> just for Decoy, or your <b>Phone screen lock</b> (its PIN, pattern, password or fingerprint).</li>
+          <li>Under <b>Locked apps</b>, tick the apps that should ask first.</li>
+          <li>Open one: Decoy asks to unlock before the app appears.</li>
+        </ol>
+        <h3>More ways to tune it</h3>
+        <ul class="points">
+          <li><b>Lock groups</b> <span class="tag tag-premium">Premium</span>: apps that unlock together, each group with its own PIN.</li>
+          <li><b>Duress PIN:</b> typing it instead of the real PIN looks exactly like the app crashing, and the app never opens.</li>
+          <li><b>Re-lock when the screen turns off</b>, and a delay after unlocking before an app asks again.</li>
+          <li><b>Trusted network:</b> no unlock needed while you're on your home Wi-Fi.</li>
+          <li><b>Failed attempts:</b> how many wrong PINs before it gets stricter.</li>
+        </ul>
+        <h3>Lock the settings too</h3>
+        <p>In Decoy Settings › <b>Settings lock &amp; secrets</b>, turn on <b>Ask before opening Settings</b> so nobody can undo your setup. You can also hide the Settings button.</p>
+        <p class="note">With the accessibility service on (Decoy Settings › Accessibility permission), a locked app also asks when it's opened another way, such as from a notification. Decoy explains what it's used for before you turn it on.</p>
+      </div>
+      <figure class="phone"><img src="assets/img/lock.svg" alt="The PIN screen for a locked app" width="230" height="474" loading="lazy"><figcaption>App lock</figcaption></figure>
+    </section>
+
+    <section class="topic" id="intruders">
+      <div class="topic-text">
+        <h2>Intruder gallery <span class="tag tag-premium">Premium</span></h2>
+        <p class="where"><b>Where</b><span>Decoy Settings</span><i>›</i><span>Intruder gallery</span></p>
+        <p>Turn it on and Decoy takes a photo with the front camera when someone types a wrong PIN, with the time and the app they tried. Only you can open the gallery, and you can delete everything in it at once.</p>
+      </div>
+      <figure class="phone"><img src="assets/img/intruders.svg" alt="Photos of wrong-PIN attempts with the time and app" width="230" height="474" loading="lazy"><figcaption>Intruder gallery</figcaption></figure>
+    </section>
+
+    <section class="topic" id="crash">
+      <div class="topic-text">
+        <h2>Fake crash <span class="tag tag-premium">Premium</span></h2>
+        <p class="where"><b>Where</b><span>Decoy Settings</span><i>›</i><span>Fake crash</span></p>
+        <p>Chosen apps show a convincing "keeps stopping" message instead of opening. Everyone else thinks the app is broken; you know the way through.</p>
+        <ol class="steps">
+          <li>Under <b>Apps that fake-crash</b>, pick the apps.</li>
+          <li>Choose a <b>Crash style</b> and tap <b>Preview</b> to see it as someone else would.</li>
+          <li>Choose your <b>Bypass gesture</b>, the secret way past the message:
+            <ul class="points">
+              <li>hold one of the message's rows until it lets you through;</li>
+              <li>hold a row, then drag in a set direction before letting go;</li>
+              <li>press a volume button while the message is showing;</li>
+              <li>or double-tap the date at the top of the home screen first, then hold the row.</li>
+            </ul>
+          </li>
+        </ol>
+        <p>For more realism, the message can arrive a moment after the tap, as a real crash does, and can show a fake crash report afterwards.</p>
+      </div>
+      <figure class="phone"><img src="assets/img/fake-crash.svg" alt="A message saying Messages keeps stopping" width="230" height="474" loading="lazy"><figcaption>Fake crash</figcaption></figure>
+    </section>
+
+    <section class="topic" id="files">
+      <div class="topic-text">
+        <h2>File vault <span class="tag tag-premium">Premium</span></h2>
+        <p class="where"><b>Where</b><span>Decoy Settings</span><i>›</i><span>File vault</span><i>›</i><span>Open file vault</span></p>
+        <ol class="steps">
+          <li>Under <b>Unlock with</b>, use the same lock as your apps, a <b>File vault PIN</b> of its own, or the phone's screen lock. Fingerprint can be allowed too.</li>
+          <li>Open the file vault and add photos, videos, documents or any other file.</li>
+        </ol>
+        <p>The files are copied into Decoy and encrypted. A gesture or your draw-to-reveal shape can open the vault straight away.</p>
+      </div>
+      <figure class="phone"><img src="assets/img/file-vault.svg" alt="The file vault with photos and documents" width="230" height="474" loading="lazy"><figcaption>File vault</figcaption></figure>
+    </section>
+
+    <section class="topic" id="modes">
+      <div class="topic-text">
+        <h2>Kid, Guest and Phone modes <span class="tag tag-premium">Premium</span></h2>
+        <p class="where"><b>Where</b><span>Decoy Settings</span><i>›</i><span>Profiles</span></p>
+        <p>A mode is a stripped-back home screen with only the apps you allow. Hand the phone to a child, a friend or a guest, and they can't wander into anything else.</p>
+        <h3>Set one up</h3>
+        <ol class="steps">
+          <li>Pick <b>Kid mode</b>, <b>Guest mode</b> or <b>Phone mode</b>, or tap <b>Create a mode</b> for your own, with its own name and icon.</li>
+          <li>Under <b>Allowed apps</b>, tick what it may use. Tick <b>Decoy Phone</b> to give it a phone that only calls the people you add.</li>
+          <li>Choose the extras: <b>Full screen</b>, a daily <b>Time limit</b>, and <b>Lock every other app</b>, which sends anything not on the list back to the mode's home screen.</li>
+          <li>Under <b>Leaving a profile</b>, choose the phone's screen lock or a PIN just for leaving modes.</li>
+        </ol>
+        <h3>Start a mode</h3>
+        <ul class="points">
+          <li>Tap <b>Enter</b> next to it in Profiles;</li>
+          <li>set a gesture to <b>Enter Kid mode</b>, <b>Enter Guest mode</b> or <b>Enter Phone mode</b>;</li>
+          <li>or add its shortcut to the home screen from the Widgets list.</li>
+        </ul>
+        <h3>Leave a mode</h3>
+        <p>Tap the lock at the top of the mode's home screen and unlock with your screen lock, fingerprint or profile PIN. When the time limit runs out, a "time's up" screen covers everything until you unlock.</p>
+        <p class="note">With the accessibility service on, the notification panel and quick settings are shut again the moment they're pulled down, so nobody gets to Android's settings from a mode.</p>
+      </div>
+      <figure class="phone"><img src="assets/img/profiles.svg" alt="A Kid mode home screen with six apps and the time left" width="230" height="474" loading="lazy"><figcaption>Kid mode</figcaption></figure>
+    </section>
+
+    <section class="topic" id="decoy-phone">
+      <div class="topic-text">
+        <h2>Decoy Phone <span class="tag tag-new">New</span></h2>
+        <p>Decoy's own dialler for modes. It lists only the contacts you add, so a borrowed phone can call home without showing your whole contact list.</p>
+        <p class="where"><b>Where</b><span>Decoy Settings</span><i>›</i><span>Profiles</span><i>›</i><span>a mode</span><i>›</i><span>Phone contacts</span></p>
+        <ol class="steps">
+          <li>Add the people it may call. They're copies kept in Decoy: changing them never touches your phone's contacts.</li>
+          <li>Turn the <b>keypad</b> on or off for that mode. It's off in Kid mode to start with, so children can only call the people you added.</li>
+          <li>Optionally, clear the call history each time the mode starts.</li>
+        </ol>
+        <h3>Using it</h3>
+        <ul class="points">
+          <li><b>Phone mode</b> opens straight on the keypad, with recent calls above it. In other modes, Decoy Phone is a tile on the mode's home screen.</li>
+          <li>Switch between <b>Keypad</b> and <b>Contacts</b> with the tabs at the bottom, or swipe left and right.</li>
+          <li>Tap the delete key to remove a digit; <b>hold it to clear the whole number</b>. Hold 0 for +.</li>
+          <li>Keys play their dial tones and vibrate, following the phone's own "Dial pad tones" and touch-vibration settings.</li>
+          <li>With the Phone permission, calls start straight away; without it, the phone's dialler opens with the number in.</li>
+        </ul>
+      </div>
+      <figure class="phone"><img src="assets/img/decoy-phone.svg" alt="Decoy Phone in Phone mode with a keypad and Keypad and Contacts tabs at the bottom" width="230" height="474" loading="lazy"><figcaption>Decoy Phone</figcaption></figure>
+    </section>
+
+    <section class="topic" id="senior">
+      <div class="topic-text">
+        <h2>Senior mode <span class="tag tag-new">New</span></h2>
+        <p class="where"><b>Where</b><span>Home settings</span><i>›</i><span>Home screen</span><i>›</i><span>Layout</span><i>›</i><span>Senior</span></p>
+        <p>A simple home screen for a parent or grandparent: a big clock, big buttons for favourite people and apps, SOS, the torch, reminders and an easy phone screen. A four-step setup gets it ready, and a PIN keeps anything from changing by accident.</p>
+        <p><a class="btn btn-quiet" href="senior.html">The full Senior mode guide</a></p>
+      </div>
+      <figure class="phone"><img src="assets/img/senior.svg" alt="Senior mode with a big clock, a reminder and big buttons" width="230" height="474" loading="lazy"><figcaption>Senior mode</figcaption></figure>
+    </section>
+
+    <section class="topic" id="schedule">
+      <div class="topic-text">
+        <h2>Sleeping mode and mindful pauses</h2>
+        <h3>Sleeping mode <span class="tag tag-premium">Premium</span></h3>
+        <p class="where"><b>Where</b><span>Decoy Settings</span><i>›</i><span>Sleeping mode</span></p>
+        <p>Set hours, such as 10 pm to 7 am, when chosen apps are locked, hidden or fake-crash on their own, then come back by themselves.</p>
+        <h3>Mindful friction</h3>
+        <p class="where"><b>Where</b><span>Decoy Settings</span><i>›</i><span>Mindful friction</span></p>
+        <ul class="points">
+          <li><b>Breathing pause:</b> wait and breathe for a few seconds before a distracting app opens.</li>
+          <li><b>Intent prompt:</b> say why you're opening it first: a quick check (2 min), work (15 min) or leisure (10 min).</li>
+          <li><b>Open counters:</b> a small number by each app showing how often you opened it today.</li>
+        </ul>
+      </div>
+      <figure class="phone"><img src="assets/img/mindful.svg" alt="A breathing pause before an app opens" width="230" height="474" loading="lazy"><figcaption>Breathing pause</figcaption></figure>
+    </section>
+
+    <section class="topic" id="layout">
+      <div class="topic-text">
+        <h2>Layouts and icons</h2>
+        <p class="where"><b>Where</b><span>Home settings</span><i>›</i><span>Home screen</span><i>›</i><span>Layout</span></p>
+        <ul class="points">
+          <li><b>Off:</b> an empty home screen you arrange yourself; swipe up for the app drawer.</li>
+          <li><b>Classic:</b> every app placed across pages, no drawer.</li>
+          <li><b>Mixed:</b> the pages of Classic, and the drawer too.</li>
+          <li><b>Text:</b> app names instead of icons, in a grid, a list or across pages, with your own font, size and colours.</li>
+          <li><b>Senior:</b> the <a href="senior.html">Senior mode</a> home screen.</li>
+        </ul>
+        <p>Each layout keeps its own home screen, so switching back brings it back as you left it.</p>
+        <p>In <b>General</b> pick an icon pack, themed Material You icons, the icon shape and your accent colour; in <b>Home screen</b> the grid size; and in <b>App drawer</b> the number of columns and icon style.</p>
+      </div>
+      <figure class="phone"><img src="assets/img/text-only.svg" alt="The Text layout with app names instead of icons" width="230" height="474" loading="lazy"><figcaption>Text layout</figcaption></figure>
+    </section>
+
+    <section class="topic" id="widgets">
+      <div class="topic-text">
+        <h2>Widgets</h2>
+        <p class="where"><b>Where</b><span>Hold an empty spot on the home screen</span><i>›</i><span>Widgets</span></p>
+        <ol class="steps">
+          <li>Pick an Android widget or one of Decoy's own: weather, clocks, media, notes, Bluetooth battery, a photo slideshow, quick toggles and more.</li>
+          <li>Drag it where you want it. Hold it to resize it or change its options.</li>
+        </ol>
+        <p>Widgets can be stacked to swipe through, and there's a <b>widget page</b> too, a scrolling page of widgets of its own (Home screen › Feed &amp; widget page).</p>
+      </div>
+      <figure class="phone"><img src="assets/img/widgets.svg" alt="Weather, music and Bluetooth battery widgets on the home screen" width="230" height="474" loading="lazy"><figcaption>Widgets</figcaption></figure>
+    </section>
+
+    <section class="topic" id="gestures">
+      <div class="topic-text">
+        <h2>Gestures</h2>
+        <p class="where"><b>Where</b><span>Home settings</span><i>›</i><span>Gestures</span></p>
+        <p>Choose what happens when you double tap, swipe up or down, swipe with two fingers, pinch in or out, double tap at the top, tap with two fingers, swipe on the dock, or shake the phone.</p>
+        <p>Each one can open an app, the drawer, search, the notification panel or the sidebar, turn on the torch, take a screenshot, change the volume or brightness, play or pause music, start Kid, Guest or Phone mode, open the file vault or draw to reveal hidden apps.</p>
+      </div>
+      <figure class="phone"><img src="assets/img/gestures.svg" alt="The list of gestures and what each one does" width="230" height="474" loading="lazy"><figcaption>Gestures</figcaption></figure>
+    </section>
+
+    <section class="topic" id="sidebar">
+      <div class="topic-text">
+        <h2>Sidebar</h2>
+        <p class="where"><b>Where</b><span>Decoy Settings</span><i>›</i><span>Sidebar</span></p>
+        <p>An edge panel that slides in from the side of the screen with your favourite apps, switches, tools and private shortcuts. Swipe in from the handle, or tap it, and move the handle wherever it's comfortable. Show one panel at a time as tabs, or everything in one scroll.</p>
+      </div>
+      <figure class="phone"><img src="assets/img/sidebar.svg" alt="The sidebar open at the edge of the screen" width="230" height="474" loading="lazy"><figcaption>Sidebar</figcaption></figure>
+    </section>
+
+    <section class="topic" id="animations">
+      <div class="topic-text">
+        <h2>Animations</h2>
+        <p class="where"><b>Where</b><span>Home settings</span><i>›</i><span>Animations</span></p>
+        <ol class="steps">
+          <li>Start with a <b>motion style</b>: Icon zoom, Fluid, One UI, Pixel, Snappy, Bouncy or Calm.</li>
+          <li>Fine-tune <b>Opening apps</b> and <b>Closing apps</b>: style, speed, curve, colour and how big the icon grows.</li>
+          <li>Then the <b>home screen</b> (page turns, unlock, tap ripples), <b>widgets</b>, the <b>app drawer</b> and <b>folders</b>.</li>
+        </ol>
+        <p>Every option plays a live preview with your own apps before you pick it. Choose "None" for any of them, or turn on "Remove animations" in Android's accessibility settings to switch them all off.</p>
+      </div>
+      <figure class="phone">
+        <picture>
+          <source srcset="assets/img/animations-still.svg" media="(prefers-reduced-motion: reduce)">
+          <img src="assets/img/animations.svg" alt="An app's icon zooming to the middle of the screen and opening into the app" width="230" height="474" loading="lazy">
+        </picture>
+        <figcaption>Icon zoom</figcaption>
+      </figure>
+    </section>
+
+    <section class="topic" id="backup">
+      <div class="topic-text">
+        <h2>Backup and Keep apps</h2>
+        <p class="where"><b>Where</b><span>Home settings</span><i>›</i><span>General</span><i>›</i><span>Backup &amp; restore</span></p>
+        <ol class="steps">
+          <li>Tap <b>Save backup to a file</b> and choose where it goes. Leave <b>Include home screen layout</b> on to keep your icons and widgets in their places.</li>
+          <li>On the new phone, install Decoy and tap <b>Restore from a file</b>.</li>
+          <li>If the backup has apps this phone doesn't have yet, choose <b>Keep placeholders</b>: each stays in its spot as a grey icon. Tap one to install the app, and the real icon takes over.</li>
+        </ol>
+        <p>Turn on <b>Keep apps that aren't installed</b> and icons also stay put if an app goes missing while Decoy isn't running, after a reset or a move to a new phone. Apps you uninstall yourself are still removed.</p>
+        <p class="note secret">PINs, the secret unlock code and vaults are never written to a backup file.</p>
+      </div>
+      <figure class="phone"><img src="assets/img/keep-apps.svg" alt="Two grey placeholder icons with download badges after a restore" width="230" height="474" loading="lazy"><figcaption>Keep apps</figcaption></figure>
+    </section>
+
+    <section class="topic" id="premium">
+      <div class="topic-text">
+        <h2>Free and Premium</h2>
+        <p>Hiding apps, app lock, the settings lock, the secret code, most widgets, every layout and animation, Senior mode and backups are free.</p>
+        <p><b>Premium</b> is one payment through Google Play, with no subscription. It adds vaults, lock groups, the file vault, the intruder gallery, fake crash, Kid, Guest and custom modes, sleeping mode, the premium widgets and Senior mode's caregiver features. It covers every phone and TV on the same Google account.</p>
+        <p>To buy it, tap the Premium button at the top of Settings, or any feature marked PRO. <b>Restore purchase</b> on the same page brings it back on a new phone.</p>
+      </div>
+      <figure class="phone"><img src="assets/img/premium.svg" alt="The Premium page" width="230" height="474" loading="lazy"><figcaption>Premium</figcaption></figure>
+    </section>
+
+  </div>
+</div>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <h4>Decoy Launcher</h4>
+      <p>A home screen for Android phones and TVs that keeps your private apps private.</p>
+    </div>
+    <div>
+      <h4>Phone</h4>
+      <ul><li><a href="phone.html">How to use it</a></li><li><a href="senior.html">Senior mode</a></li><li><a href="index.html#privacy">Privacy</a></li></ul>
+    </div>
+    <div>
+      <h4>Android TV</h4>
+      <ul><li><a href="tv.html">TV launcher</a></li><li><a href="tv.html#setup">Make it the TV's home</a></li><li><a href="tv.html#faq">TV questions</a></li></ul>
+    </div>
+    <div>
+      <h4>Get it</h4>
+      <ul><li><a href="https://play.google.com/store/apps/details?id=com.jeet_studio.decoy_launcher">Google Play</a></li></ul>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
